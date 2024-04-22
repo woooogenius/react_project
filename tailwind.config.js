@@ -4,7 +4,13 @@ module.exports = {
     "./src/**/*.{html,js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors : {
+        'button_color' : '#6250FF',
+        'text-gradient-from' : '#9FBAFD',
+        'text-gradient-to' : '#4E81FF'
+      }
+    },
   },
   plugins: [],
 }
