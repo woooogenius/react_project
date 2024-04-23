@@ -4,6 +4,12 @@ module.exports = {
     "./src/**/*.{html,js,jsx,ts,tsx}",
   ],
   theme: {
+    screens: {
+      'mobile' : {'max' : '767px'},
+      'tablet' : '768px',
+      'pc' : '1440px',
+      'widepc' : '1920px', 
+    },
     extend: {
       colors : {
         'button_color' : '#6250FF',
@@ -24,7 +30,11 @@ module.exports = {
         'text-gra-2' : '#7F3ADD',
         'text-blue-deep2' : '#375984',
         'text-blue-light2' : '#698AB1',
-        'text-brown' : '#6C3111'
+        'text-brown' : '#6C3111',
+        'box-aqua' : '#DCEFF4',
+        'box-yellow-2' : '#FBFBEF',
+        'text-green-deep' : '#516B71',
+        
 
       }
     },
