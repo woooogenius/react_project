@@ -80,7 +80,7 @@ export default function HomePage() {
                 <img src={process.env.PUBLIC_URL+'assets/img/mail.png'} alt="img" />
               </div>
 
-              <p className='mt-[24px] text-center text-[26px] font-semibold'>메세지 용량에<br/>제한 받지 않고 전송</p>
+              <p className='mt-[24px] text-center text-[26px] font-semibold'>모든 종류의<br/>문자 메시지를 한번에</p>
               <p className='mt-[20px] text-center text-[20px] text-text-gray-2'>메시지 옹량 걱정없이 단문 메시지는<br/>물론 장문, 사진까지 전송이 가능합니다.</p>
 
             </div>
@@ -91,8 +91,8 @@ export default function HomePage() {
                 <img src={process.env.PUBLIC_URL+'assets/img/notice.png'} alt="img" />
               </div>
 
-              <p className='mt-[24px] text-center text-[26px] font-semibold'>메세지 용량에<br/>제한 받지 않고 전송</p>
-              <p className='mt-[20px] text-center text-[20px] text-text-gray-2'>메시지 옹량 걱정없이 단문 메시지는<br/>물론 장문, 사진까지 전송이 가능합니다.</p>
+              <p className='mt-[24px] text-center text-[26px] font-semibold'>간편한 광고<br/>문자 메시지 설정</p>
+              <p className='mt-[20px] text-center text-[20px] text-text-gray-2'>광고 설정 버튼 클릭 한번으로<br/>080 수신 거부 번호가 적용됩니다.</p>
 
             </div>
 
@@ -149,12 +149,12 @@ export default function HomePage() {
                   </div>  
               </div>
 
-              <div className='w-[520px] h-[720px] bg-box-yellow-light rounded-[25px] relative'>
+              <div className='w-[520px] h-[720px] bg-box-yellow-light rounded-[25px] relative overflow-hidden'>
                 <div className='px-[55px] pt-[72px] overflow-hidden'>
                       <p className='text-[34px] font-semibold text-text-brown'>누르면 바로 전송완료</p>
                       <p className='text-[34px] font-semibold text-text-gray-2'>누르자마자 수신인에게<br/>바로 전달됩니다</p>
-                      <div className='absolute w-[450px] mt-[66px] bottom-0 left-1/2 transform -translate-x-1/2'>
-                        <img className='' src={process.env.PUBLIC_URL+'assets/img/screen.png'} alt="img" />
+                      <div className='absolute w-[416px] h-[432px] mt-[66px] bottom-0 left-1/2 transform -translate-x-1/2'>
+                        <img className='w-full' src={process.env.PUBLIC_URL+'assets/img/phoneframe.webp'} alt="img" />
                         <button className='w-[298px] h-[67px] bg-button_color rounded-[20px] text-[24px] text-white absolute bottom-[20px] left-1/2 transform -translate-x-1/2'>전송하기</button>
                       </div>
                 </div> 
