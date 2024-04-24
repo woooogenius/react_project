@@ -8,7 +8,6 @@ import SendMessagePage from './pages/SendMessagePage';
 function App() {
   return (
     <div className="App">
-      <Header/>
 
 
       <Routes>

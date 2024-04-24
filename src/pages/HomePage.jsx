@@ -1,12 +1,14 @@
 import React, { useRef, useState } from 'react'
 import Footer from '../components/Footer'
 import { motion } from "framer-motion";
+import Header from '../components/Header';
 
 export default function HomePage() {
 
 
   return (
     <>
+          <Header/>
           <div className='w-full bg-black overflow-hidden'>
             <div className='widepc:w-[1920px] mobile:w-full mobile:px-[20px] pc:w-[1280px] pc:px-[50px] tablet:px-[50px] widepc:px-[250px] pt-[80px] h-[1076px] m-auto bg-black flex  text-white '>
                 
