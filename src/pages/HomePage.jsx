@@ -194,7 +194,7 @@ export default function HomePage() {
 
           <div className='mt-[64px] flex flex-wrap justify-center'>
             
-            <motion.div initial={{ opacity:0, scale:0.5 }} whileInView={{opacity: 1, scale:1,transition: {when: "beforeChildren", staggerChildren: 0.2,duration:0.5,delay: 0.5, ease: [0, 0.71, 0.2, 1.01]} }} className='w-[688px] h-[597px] mobile:w-full tablet:w-full pc:w-[calc(50%-22px)] tablet:h-[400px] mobile:h-[280px] pc:h-[500px] bg-box-aqua rounded-[25px] px-[54px] mobile:pt-[50px] tablet:pt-[72px] relative tablet:mr-0 pc:mr-[44px]'>
+            <motion.div initial={{ opacity:0, scale:0.5 }} whileInView={{opacity: 1, scale:1,transition: {when: "beforeChildren", staggerChildren: 0.2,duration:0.4,delay: 0.2, ease: [0, 0.71, 0.2, 1.01]} }} className='w-[688px] h-[597px] mobile:w-full tablet:w-full pc:w-[calc(50%-22px)] tablet:h-[400px] mobile:h-[280px] pc:h-[500px] bg-box-aqua rounded-[25px] px-[54px] mobile:pt-[50px] tablet:pt-[72px] relative tablet:mr-0 pc:mr-[44px]'>
               <div>
                 <p className='text-[34px] mobile:text-[24px] pc:text-[28px] tablet:text-[24px]'>일반 SMS는 기본, 카카오톡까지</p>
                 <p className='text-[34px] mobile:text-[22px] pc:text-[28px] tablet:text-[24px] text-text-green-deep'>종류와 상관없이 모두 전송해 드립니다</p>
@@ -204,7 +204,7 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            <motion.div  initial={{ opacity:0, scale:0.5 }} whileInView={{opacity: 1, scale:1,transition: {when: "beforeChildren", staggerChildren: 0.2,duration:0.5,delay: 0.5, ease: [0, 0.71, 0.2, 1.01]} }} className='w-[688px] mobile:w-full tablet:w-full pc:w-[calc(50%-22px)] h-[597px] mobile:h-[280px] mobile:mt-[44px] tablet:h-[400px] pc:h-[500px] bg-box-yellow-2 rounded-[25px] px-[54px] mobile:pt-[50px] tablet:pt-[72px] relative tablet:mt-[44px] pc:mt-0'>
+            <motion.div  initial={{ opacity:0, scale:0.5 }} whileInView={{opacity: 1, scale:1,transition: {when: "beforeChildren", staggerChildren: 0.2,duration:0.4,delay: 0.3, ease: [0, 0.71, 0.2, 1.01]} }} className='w-[688px] mobile:w-full tablet:w-full pc:w-[calc(50%-22px)] h-[597px] mobile:h-[280px] mobile:mt-[44px] tablet:h-[400px] pc:h-[500px] bg-box-yellow-2 rounded-[25px] px-[54px] mobile:pt-[50px] tablet:pt-[72px] relative tablet:mt-[44px] pc:mt-0'>
               <div>
                 <p className='text-[34px] mobile:text-[24px] pc:text-[28px] tablet:text-[24px]'>강력한 보안을 제공합니다</p>
                 <p className='text-[34px] mobile:text-[22px] pc:text-[28px] tablet:text-[24px] text-[#696156]'>신뢰할 수 있는 최신의 보안 시스템을<br/>적용하여 개인정보를 보호합니다</p>
@@ -214,7 +214,7 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            <motion.div  initial={{ opacity:0, scale:0.5 }} whileInView={{opacity: 1, scale:1,transition: {when: "beforeChildren", staggerChildren: 0.2,duration:0.5,delay: 0.5, ease: [0, 0.71, 0.2, 1.01]} }} className='w-[1420px] mobile:w-full tablet:w-full pc:w-full h-[495px] mobile:h-[280px] tablet:h-[400px] pc:h-[470px] bg-box-gray-light rounded-[25px] px-[54px] mobile:pt-[50px] tablet:pt-[72px] relative mt-[44px] overflow-hidden text-center'>
+            <motion.div  initial={{ opacity:0, scale:0.5 }} whileInView={{opacity: 1, scale:1,transition: {when: "beforeChildren", staggerChildren: 0.2,duration:0.4,delay: 0.4, ease: [0, 0.71, 0.2, 1.01]} }} className='w-[1420px] mobile:w-full tablet:w-full pc:w-full h-[495px] mobile:h-[280px] tablet:h-[400px] pc:h-[470px] bg-box-gray-light rounded-[25px] px-[54px] mobile:pt-[50px] tablet:pt-[72px] relative mt-[44px] overflow-hidden text-center'>
               <div>
                 <p className='text-[34px] mobile:text-[24px] pc:text-[28px] tablet:text-[24px]'>놀라운 수신율을 경험해 보세요</p>
                 <p className='text-[34px] mobile:text-[22px] pc:text-[28px] tablet:text-[24px] text-[#727B88]'>샌드고의 정확한 수신율은 99.8%에 달합니다</p>
