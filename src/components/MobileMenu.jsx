@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from "framer-motion";
 
 export default function MobileMenu({onClose}) {
     const handleClose = ()=>{
@@ -6,11 +7,11 @@ export default function MobileMenu({onClose}) {
     }
   return (
     <>
-        <div className='absolute top-0 left-0 z-40 '>
+        <motion.div initial={{ opacity:0 }} whileInView={{opacity: 1,transition: {duration:0.5} }}  className='absolute top-0 left-0 z-40'>
             <div className="fixed top-0 left-0 w-full h-full bg-white z-10 opacity-50"></div>
             <div className="fixed top-0 z-50">
                 <div className="w-full relative">
-                    <div className='bg-[#222222] text-white w-[250px] h-screen px-5 py-6 absolute left-0 top-0 z-50'>
+                    <motion.div initial={{ x: -70, opacity:0 }} whileInView={{opacity: 1, x:0,transition: {duration:0.5} }} className='bg-[#222222] text-white w-[250px] h-screen px-5 py-6 absolute left-0 top-0 z-50'>
                         <div onClick={handleClose} className="mb-[77px] text-xl">X</div>
                         <div>
                                 
@@ -27,11 +28,11 @@ export default function MobileMenu({onClose}) {
 
                         </div> 
 
-                    </div>
+                    </motion.div>
                 </div>
             
             </div>
-        </div>
+        </motion.div>
     </>
   )
 }
