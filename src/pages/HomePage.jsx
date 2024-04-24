@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import Footer from '../components/Footer'
+import { motion } from "framer-motion";
 
 export default function HomePage() {
+
 
   return (
     <>
@@ -11,14 +13,14 @@ export default function HomePage() {
 
                 <div className='widepc:w-1/2 pc:w-5/12 h-full mobile:w-full tablet:w-full'>
                   <div className='w-full h-full flex flex-col justify-center mobile:items-center mobile:text-center tablet:items-center tablet:text-center'>
-                    <p className='text-[18px] mb-[10px]'>인터넷 문자 메시지 전송의 모든것</p>
+                    <motion.p initial={{ y: -70, opacity:0 }} whileInView={{opacity: 1, y:0,transition: {when: "beforeChildren", staggerChildren: 0.5, duration:0.7} }} className='text-[18px] mb-[10px]'>인터넷 문자 메시지 전송의 모든것</motion.p>
 
-                    <div className='text-[45px] mobile:text-[40px] tracking-[5px] flex flex-col font-bold'>
+                    <motion.div initial={{ y: -50, opacity:0 }} whileInView={{opacity: 1, y:0,transition: {when: "beforeChildren", staggerChildren: 0.5, duration:0.7} }} className='text-[45px] mobile:text-[40px] tracking-[5px] flex flex-col font-bold'>
                         <p className='bg-gradient-to-r from-text-gradient-from to-text-gradient-to inline-block bg-clip-text text-transparent'>가장 빠르고 안정적인</p>
                         <p className='bg-gradient-to-r from-text-gradient-from to-text-gradient-to inline-block bg-clip-text text-transparent'>문자 서비스 SEDNGO</p>
-                    </div>
+                    </motion.div>
 
-                    <button className='w-[219px] pc:w-[180px] pc:h-[55px] pc:text-[18px] h-[65px] mt-[68px] bg-button_color rounded-[44px] text-[21px]'>메시지 전송하기</button>
+                    <motion.button initial={{ scale:1 }} whileHover={{scale:1.1,transition: {duration:0.7} }} className='w-[219px] pc:w-[180px] pc:h-[55px] pc:text-[18px] h-[65px] mt-[68px] bg-button_color rounded-[44px] text-[21px]'>메시지 전송하기</motion.button>
                   </div>
                 </div>
 
@@ -66,18 +68,18 @@ export default function HomePage() {
 
               <div className='mt-[96px] flex justify-center mobile:flex-wrap tablet:flex-wrap pc:flex-nowrap'>
 
-                <div className='w-[444px] h-[349px] mobile:w-full tablet:w-full  bg-box-light-violet rounded-[20px] tablet:mr-0 mobile:mb-[20px] tablet:mb-[20px] pc:mr-[44px] flex flex-col justify-center items-center'>
+                <motion.div initial={{ scale: 0 }} whileInView={{scale: 1, rotateZ: 360,transition: {when: "beforeChildren", staggerChildren: 0.5, duration:0.7} }} className='w-[444px] h-[349px] mobile:w-full tablet:w-full  bg-box-light-violet rounded-[20px] tablet:mr-0 mobile:mb-[20px] tablet:mb-[20px] pc:mr-[44px] flex flex-col justify-center items-center'>
 
                   <div className='w-[64px] h-[64px]'>
                     <img src={process.env.PUBLIC_URL+'assets/img/write.png'} alt="img" />
                   </div>
 
-                  <p className='mt-[24px] text-center text-[26px] pc:text-[22px] font-semibold'>메세지 용량에<br/>제한 받지 않고 전송</p>
+                  <p  className='mt-[24px] text-center text-[26px] pc:text-[22px] font-semibold'>메세지 용량에<br/>제한 받지 않고 전송</p>
                   <p className='mt-[20px] text-center text-[20px] pc:text-[16px] text-text-gray-2'>메시지 옹량 걱정없이 단문 메시지는<br/>물론 장문, 사진까지 전송이 가능합니다.</p>
 
-                </div>
+                </motion.div>
 
-                <div className='w-[444px] h-[349px] mobile:w-full tablet:w-full  bg-box-light-violet rounded-[20px] tablet:mr-0 mobile:mb-[20px] tablet:mb-[20px] pc:mr-[44px] flex flex-col justify-center items-center'>
+                <motion.div initial={{ scale: 0 }} whileInView={{scale: 1, rotateZ: 360,transition: {when: "beforeChildren", staggerChildren: 0.5,duration:0.7} }} className='w-[444px] h-[349px] mobile:w-full tablet:w-full  bg-box-light-violet rounded-[20px] tablet:mr-0 mobile:mb-[20px] tablet:mb-[20px] pc:mr-[44px] flex flex-col justify-center items-center'>
 
                   <div className='w-[64px] h-[64px]'>
                     <img src={process.env.PUBLIC_URL+'assets/img/mail.png'} alt="img" />
@@ -86,9 +88,9 @@ export default function HomePage() {
                   <p className='mt-[24px] text-center text-[26px] pc:text-[22px] font-semibold'>모든 종류의<br/>문자 메시지를 한번에</p>
                   <p className='mt-[20px] text-center text-[20px] pc:text-[16px] text-text-gray-2'>메시지 옹량 걱정없이 단문 메시지는<br/>물론 장문, 사진까지 전송이 가능합니다.</p>
 
-                </div>
+                </motion.div>
 
-                <div className='w-[444px] h-[349px] mobile:w-full tablet:w-full  bg-box-light-violet rounded-[20px]  flex flex-col justify-center items-center'>
+                <motion.div initial={{ scale: 0 }} whileInView={{scale: 1, rotateZ: 360,transition: {when: "beforeChildren", staggerChildren: 0.5,duration:0.7} }} className='w-[444px] h-[349px] mobile:w-full tablet:w-full  bg-box-light-violet rounded-[20px]  flex flex-col justify-center items-center'>
 
                   <div className='w-[64px] h-[64px]'>
                     <img src={process.env.PUBLIC_URL+'assets/img/notice.png'} alt="img" />
@@ -97,7 +99,7 @@ export default function HomePage() {
                   <p className='mt-[24px] text-center text-[26px] pc:text-[22px] font-semibold'>간편한 광고<br/>문자 메시지 설정</p>
                   <p className='mt-[20px] text-center text-[20px] pc:text-[16px] text-text-gray-2'>광고 설정 버튼 클릭 한번으로<br/>080 수신 거부 번호가 적용됩니다.</p>
 
-                </div>
+                </motion.div>
 
               </div>
 
@@ -122,17 +124,17 @@ export default function HomePage() {
               
               <div className='flex flex-row justify-center mt-[96px] mobile:flex-wrap tablet:flex-wrap pc:flex-nowrap'>
                 
-                <div className='pc:w-[626px] mobile:w-full mobile:h-[250px] tablet:mr-0 tablet:mt-[40px] tablet:w-full tablet:h-[500px] pc:h-[597px] bg-box-gray-light rounded-[25px] pc:mr-[54px] overflow-hidden tablet:relative'>
+                <motion.div initial={{ opacity:0, y:20 }} whileInView={{opacity: 1, y:0,transition: {when: "beforeChildren", staggerChildren: 0.3,duration:0.7} }} className='pc:w-[626px] mobile:w-full mobile:h-[250px] tablet:mr-0 tablet:mt-[40px] tablet:w-full tablet:h-[500px] pc:h-[597px] bg-box-gray-light rounded-[25px] pc:mr-[54px] overflow-hidden tablet:relative'>
                   <div className='px-[54px] pt-[72px]'>
                     <p className='text-[34px] tablet:text-[28px] mobile:text-[24px] font-semibold'>자주 전송하는 내용이 있나요?</p>
                     <p className='text-[34px] tablet:text-[28px] mobile:text-[22px] font-semibold text-text-gray-medium'>템플릿으로 메시지 내용을<br/>저장하여 간편하게 전송하세요</p>
-                    <div className='mobile:hidden tablet:block'>
-                      <img className=' pc:w-[798px] pc:h-[427px] tablet:w-[450px] tablet:h-[250px] mt-[66px]' src={process.env.PUBLIC_URL+'assets/img/screen.png'} alt="img" />
+                    <div className='mobile:hidden tablet:block '>
+                      <img className=' pc:w-[798px] pc:h-[427px] tablet:w-[450px] tablet:h-[250px] tablet:ml-[120px] pc:ml-0  mt-[66px]' src={process.env.PUBLIC_URL+'assets/img/screen.png'} alt="img" />
                     </div>
                   </div>  
-                </div>
+                </motion.div>
 
-                <div className='pc:w-[750px] mobile:w-full mobile:h-[250px] pc:h-[597px] tablet:mr-0 mobile:mt-[40px] tablet:mt-[40px] tablet:w-full tablet:h-[500px] bg-box-light-violet rounded-[25px] overflow-hidden'>
+                <motion.div initial={{ opacity:0, y:20 }} whileInView={{opacity: 1, y:0,transition: {when: "beforeChildren", staggerChildren: 0.3,duration:0.7} }} className='pc:w-[750px] mobile:w-full mobile:h-[250px] pc:h-[597px] tablet:mr-0 mobile:mt-[40px] tablet:mt-[40px] tablet:w-full tablet:h-[500px] bg-box-light-violet rounded-[25px] overflow-hidden'>
                   <div className='px-[55px] pt-[72px]'>
                       <p className='text-[34px] tablet:text-[28px] mobile:text-[24px] font-semibold bg-gradient-to-l from-text-gra-1 to-text-gra-2 inline-block bg-clip-text text-transparent'>크레딧 구매시, 보너스 크레딧 증정</p>
                       <p className='text-[34px] tablet:text-[28px] mobile:text-[22px] font-semibold text-text-blue-deep'>크레딧 상품을 구매하면 상품별<br/>보너스 크레딧을 증정합니다</p>
@@ -140,12 +142,12 @@ export default function HomePage() {
                         <img className='w-[644px] mt-[66px]' src={process.env.PUBLIC_URL+'assets/img/screen.png'} alt="img" />
                       </div>
                   </div>  
-                </div>
+                </motion.div>
 
               </div>
 
               <div className='flex flex-row justify-center mt-[40px] mobile:flex-wrap tablet:flex-wrap pc:flex-nowrap'>
-                <div className='pc:w-[855px] mobile:w-full mobile:h-[250px] pc:h-[720px] tablet:w-full tablet:h-[500px]  tablet:mr-0 bg-box-blue-light rounded-[25px] pc:mr-[54px] overflow-hidden'>
+                <motion.div initial={{ opacity:0, y:20 }} whileInView={{opacity: 1, y:0,transition: {when: "beforeChildren", staggerChildren: 0.3,duration:0.7} }} className='pc:w-[855px] mobile:w-full mobile:h-[250px] pc:h-[720px] tablet:w-full tablet:h-[500px]  tablet:mr-0 bg-box-blue-light rounded-[25px] pc:mr-[54px] overflow-hidden'>
                   <div className='px-[54px] pt-[72px]'>
                       <p className='text-[34px] tablet:text-[28px] mobile:text-[24px] font-semibold text-text-blue-deep2'>전송 후 바로 발송확인 가능</p>
                       <p className='text-[34px] tablet:text-[28px] mobile:text-[22px] font-semibold text-text-blue-light2'>메세지 전송 후 바로 발송현황 창에서<br/>현재 메시지 전송 현황을 알려드립니다</p>
@@ -153,9 +155,9 @@ export default function HomePage() {
                         <img className='w-[800px] h-[440px] mt-[66px] pc:mt-[100px] rounded-[10px]' src={process.env.PUBLIC_URL+'assets/img/dashboard2.png'} alt="img" />
                       </div>
                     </div>  
-                </div>
+                </motion.div>
 
-                <div className='pc:w-[520px] mobile:w-full mobile:h-[250px] pc:h-[720px] tablet:w-full tablet:h-[500px] mobile:mt-[40px] tablet:mt-[40px]  pc:mt-0  bg-box-yellow-light rounded-[25px] relative overflow-hidden'>
+                <motion.div initial={{ opacity:0, y:20 }} whileInView={{opacity: 1, y:0,transition: {when: "beforeChildren", staggerChildren: 0.3,duration:0.7} }} className='pc:w-[520px] mobile:w-full mobile:h-[250px] pc:h-[720px] tablet:w-full tablet:h-[500px] mobile:mt-[40px] tablet:mt-[40px]  pc:mt-0  bg-box-yellow-light rounded-[25px] relative overflow-hidden'>
                   <div className='px-[55px] pt-[72px] overflow-hidden'>
                         <p className='text-[34px] tablet:text-[28px] mobile:text-[24px] font-semibold text-text-brown'>누르면 바로 전송완료</p>
                         <p className='text-[34px] tablet:text-[28px] mobile:text-[22px] font-semibold text-text-gray-2'>누르자마자 수신인에게<br/>바로 전달됩니다</p>
@@ -168,7 +170,7 @@ export default function HomePage() {
                           <button className='hidden tablet:block w-[130px] h-[40px] bg-button_color rounded-[20px] text-[14px] text-white absolute -bottom-[50px] left-1/2 transform -translate-x-1/2'>전송하기</button>
                         </div>
                   </div> 
-                </div>
+                </motion.div>
 
               </div>
 
@@ -192,7 +194,7 @@ export default function HomePage() {
 
           <div className='mt-[64px] flex flex-wrap justify-center'>
             
-            <div className='w-[688px] h-[597px] mobile:w-full tablet:w-full pc:w-[calc(50%-22px)] tablet:h-[400px] mobile:h-[280px] pc:h-[500px] bg-box-aqua rounded-[25px] px-[54px] mobile:pt-[50px] tablet:pt-[72px] relative tablet:mr-0 pc:mr-[44px]'>
+            <motion.div initial={{ opacity:0, scale:0.5 }} whileInView={{opacity: 1, scale:1,transition: {when: "beforeChildren", staggerChildren: 0.2,duration:0.5,delay: 0.5, ease: [0, 0.71, 0.2, 1.01]} }} className='w-[688px] h-[597px] mobile:w-full tablet:w-full pc:w-[calc(50%-22px)] tablet:h-[400px] mobile:h-[280px] pc:h-[500px] bg-box-aqua rounded-[25px] px-[54px] mobile:pt-[50px] tablet:pt-[72px] relative tablet:mr-0 pc:mr-[44px]'>
               <div>
                 <p className='text-[34px] mobile:text-[24px] pc:text-[28px] tablet:text-[24px]'>일반 SMS는 기본, 카카오톡까지</p>
                 <p className='text-[34px] mobile:text-[22px] pc:text-[28px] tablet:text-[24px] text-text-green-deep'>종류와 상관없이 모두 전송해 드립니다</p>
@@ -200,9 +202,9 @@ export default function HomePage() {
                   <img className=' rounded-[20px]' src={process.env.PUBLIC_URL+'assets/img/kaka02.png'} alt="img"/>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className='w-[688px] mobile:w-full tablet:w-full pc:w-[calc(50%-22px)] h-[597px] mobile:h-[280px] mobile:mt-[44px] tablet:h-[400px] pc:h-[500px] bg-box-yellow-2 rounded-[25px] px-[54px] mobile:pt-[50px] tablet:pt-[72px] relative tablet:mt-[44px] pc:mt-0'>
+            <motion.div  initial={{ opacity:0, scale:0.5 }} whileInView={{opacity: 1, scale:1,transition: {when: "beforeChildren", staggerChildren: 0.2,duration:0.5,delay: 0.5, ease: [0, 0.71, 0.2, 1.01]} }} className='w-[688px] mobile:w-full tablet:w-full pc:w-[calc(50%-22px)] h-[597px] mobile:h-[280px] mobile:mt-[44px] tablet:h-[400px] pc:h-[500px] bg-box-yellow-2 rounded-[25px] px-[54px] mobile:pt-[50px] tablet:pt-[72px] relative tablet:mt-[44px] pc:mt-0'>
               <div>
                 <p className='text-[34px] mobile:text-[24px] pc:text-[28px] tablet:text-[24px]'>강력한 보안을 제공합니다</p>
                 <p className='text-[34px] mobile:text-[22px] pc:text-[28px] tablet:text-[24px] text-[#696156]'>신뢰할 수 있는 최신의 보안 시스템을<br/>적용하여 개인정보를 보호합니다</p>
@@ -210,9 +212,9 @@ export default function HomePage() {
                   <img className=' rounded-[20px]' src={process.env.PUBLIC_URL+'assets/img/lock.png'} alt="img"/>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className='w-[1420px] mobile:w-full tablet:w-full pc:w-full h-[495px] mobile:h-[280px] tablet:h-[400px] pc:h-[470px] bg-box-gray-light rounded-[25px] px-[54px] mobile:pt-[50px] tablet:pt-[72px] relative mt-[44px] overflow-hidden text-center'>
+            <motion.div  initial={{ opacity:0, scale:0.5 }} whileInView={{opacity: 1, scale:1,transition: {when: "beforeChildren", staggerChildren: 0.2,duration:0.5,delay: 0.5, ease: [0, 0.71, 0.2, 1.01]} }} className='w-[1420px] mobile:w-full tablet:w-full pc:w-full h-[495px] mobile:h-[280px] tablet:h-[400px] pc:h-[470px] bg-box-gray-light rounded-[25px] px-[54px] mobile:pt-[50px] tablet:pt-[72px] relative mt-[44px] overflow-hidden text-center'>
               <div>
                 <p className='text-[34px] mobile:text-[24px] pc:text-[28px] tablet:text-[24px]'>놀라운 수신율을 경험해 보세요</p>
                 <p className='text-[34px] mobile:text-[22px] pc:text-[28px] tablet:text-[24px] text-[#727B88]'>샌드고의 정확한 수신율은 99.8%에 달합니다</p>
@@ -220,7 +222,7 @@ export default function HomePage() {
                   <img className=' rounded-[20px]' src={process.env.PUBLIC_URL+'assets/img/dashboard2.png'} alt="img"/>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
 
           </div>
@@ -230,8 +232,8 @@ export default function HomePage() {
 
         <div className='w-full widepc:px-[250px] mobile:px-[20px] tablet:px-[50px] pc:px-[50px] h-screen pt-[80px] bg-black text-white'>
           <div className='flex flex-col h-full justify-center items-center text-center'> 
-            <p className='bg-gradient-to-r from-[#B6B7F7] to-[#7FB2FE] inline-block bg-clip-text text-transparent mobile:text-[38px] tablet:text-[44px] pc:text-[50px] widepc:text-[60px] font-bold tracking-[3px]'>비지니스 광고의 시작,<br/>이제 샌드고와 함께 하세요</p>
-            <button className='rounded-[30px] w-[206px] h-[65px] mobile:w-[170px] mobile:h-[60px] mobile:text-[18px] bg-button_color text-[21px] mt-[86px]'>메시지 바로가기</button>
+            <motion.p initial={{ y: -80, opacity:0 }} whileInView={{opacity: 1, y:0,transition: {duration:0.8} }} className='bg-gradient-to-r from-[#B6B7F7] to-[#7FB2FE] inline-block bg-clip-text text-transparent mobile:text-[38px] tablet:text-[44px] pc:text-[50px] widepc:text-[60px] font-bold tracking-[3px]'>비지니스 광고의 시작,<br/>이제 샌드고와 함께 하세요</motion.p>
+            <motion.button initial={{ scale:1 }} whileHover={{scale:1.1,transition: {duration:0.7} }} className='rounded-[30px] w-[206px] h-[65px] mobile:w-[170px] mobile:h-[60px] mobile:text-[18px] bg-button_color text-[21px] mt-[86px]'>메시지 바로가기</motion.button>
           </div>
         </div>
         {/* page5 end */}

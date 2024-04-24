@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <>
         <div className='bg-[#222222] border-b border-[#333333]'>
-            <div className='px-[250px] mobile:px-[20px] tablet:px-[50px] pc:px-[50px] py-[38px]'>
+            <div className='widepc:px-[250px] mobile:px-[20px] tablet:px-[50px] pc:px-[50px] py-[38px]'>
                 <div className='flex justify-between items-center'> 
                 
                     <div className='w-[152px]  flex justify-center'>
@@ -25,7 +25,7 @@ export default function Footer() {
         </div> 
 
         <div className='bg-[#222222] text-[#eeeeee]'>
-            <div className='px-[250px] mobile:px-[20px] tablet:px-[50px] pc:px-[50px] pt-[38px] pb-[88px]'>
+            <div className='widepc:px-[250px] mobile:px-[20px] tablet:px-[50px] pc:px-[50px] pt-[38px] pb-[88px]'>
                 <p>location. 부산광역시 부산진구 중앙대로 623 3층 - 4층</p>
                 <div className='flex mt-[20px]'>
                     <p className='mr-[60px]'>P. 1833.5770</p>
