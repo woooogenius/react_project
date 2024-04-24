@@ -6,6 +6,7 @@ export default function Footer() {
         <div className='bg-[#222222] border-b border-[#333333]'>
             <div className='px-[250px] mobile:px-[20px] tablet:px-[50px] pc:px-[50px] py-[38px]'>
                 <div className='flex justify-between items-center'> 
+                
                     <div className='w-[152px]  flex justify-center'>
                         <img className='w-full ' src={process.env.PUBLIC_URL+'assets/img/google.png'} alt="img" />
                     </div>
@@ -16,6 +17,8 @@ export default function Footer() {
                             <li><a href="#!" className='text-[#EEEEEE] text-[18px]'>고객센터</a></li>
                         </ul>
                     </div>
+                    
+
                 </div>
             </div>
            
@@ -31,6 +34,8 @@ export default function Footer() {
             </div>
            
         </div> 
+  
+
     </>
   )
 }
