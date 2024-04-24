@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import MobileMenu from './MobileMenu'
+import { Link } from 'react-router-dom'
 
 
 
@@ -25,9 +26,7 @@ export default function Header() {
     const onClickBtn = ()=>{
         setIsClick(!isClick);
     }
-    // const onClose = ()=>{
-    //     setIsClick(false);
-    // }
+    
 
   return (
     <>
@@ -40,9 +39,9 @@ export default function Header() {
 
                 <div className='mobile:hidden tablet:hidden pc:block widepc:block'>
                     <ul className='flex flex-row text-[18px]'>
-                        <li><a href="#!" className={`mr-[115px] ${scrolledText} transition`}>메시지</a></li>
-                        <li><a href="#!" className={`mr-[115px]  ${scrolledText} transition`}>크레딧</a></li>
-                        <li><a href="#!" className={` ${scrolledText} transition`}>고객센터</a></li>
+                        <li><Link to={'/send'}><div className={`mr-[115px] ${scrolledText} transition`}>메시지</div></Link></li>
+                        <li><Link><div className={`mr-[115px]  ${scrolledText} transition`}>크레딧</div></Link></li>
+                        <li><Link><div className={` ${scrolledText} transition`}>고객센터</div></Link></li>
                     </ul>
                 </div>
 
