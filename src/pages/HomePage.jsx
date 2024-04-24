@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <>
           <div className='w-full bg-black'>
-            <div className='widepc:w-[1920px] pc:w-[1440px] pc:px-[50px] tablet:px-[50px] widepc:px-[250px] pt-[80px] h-[1076px] m-auto bg-black flex overflow-hidden text-white'>
+            <div className='widepc:w-[1920px] pc:w-[1280px] pc:px-[50px] tablet:px-[50px] widepc:px-[250px] pt-[80px] h-[1076px] m-auto bg-black flex overflow-hidden text-white'>
                 
 
                 <div className='widepc:w-1/2 pc:w-5/12 h-full tablet:w-full'>
@@ -122,21 +122,21 @@ export default function HomePage() {
               
               <div className='flex flex-row justify-center mt-[96px] tablet:flex-wrap pc:flex-nowrap'>
                 
-                <div className='pc:w-[626px] tablet:w-full tablet:mr-0 tablet:mt-[40px] tablet:h-[500px] pc:h-[597px] bg-box-gray-light rounded-[25px] pc:mr-[54px] overflow-hidden'>
-                  <div className='pl-[54px] pt-[72px]'>
+                <div className='pc:w-[626px] tablet:mr-0 tablet:mt-[40px] tablet:w-full tablet:h-[500px] pc:h-[597px] bg-box-gray-light rounded-[25px] pc:mr-[54px] overflow-hidden tablet:relative'>
+                  <div className='px-[54px] pt-[72px]'>
                     <p className='text-[34px] pc:text-[28px] font-semibold'>자주 전송하는 내용이 있나요?</p>
                     <p className='text-[34px] pc:text-[28px] font-semibold text-text-gray-medium'>템플릿으로 메시지 내용을<br/>저장하여 간편하게 전송하세요</p>
-                    <div >
-                      <img className='w-[798px] h-[427px] mt-[66px]' src={process.env.PUBLIC_URL+'assets/img/screen.png'} alt="img" />
+                    <div className=''>
+                      <img className=' pc:w-[798px] pc:h-[427px] tablet:w-[450px] tablet:h-[250px] mt-[66px]' src={process.env.PUBLIC_URL+'assets/img/screen.png'} alt="img" />
                     </div>
                   </div>  
                 </div>
 
-                <div className='pc:w-[750px] pc:h-[597px] tablet:w-full tablet:mr-0 tablet:mt-[40px] tablet:h-[500px] bg-box-light-violet rounded-[25px] overflow-hidden'>
+                <div className='pc:w-[750px] pc:h-[597px] tablet:mr-0 tablet:mt-[40px] tablet:w-full tablet:h-[500px] bg-box-light-violet rounded-[25px] overflow-hidden'>
                   <div className='px-[55px] pt-[72px]'>
                       <p className='text-[34px] pc:text-[28px] font-semibold bg-gradient-to-l from-text-gra-1 to-text-gra-2 inline-block bg-clip-text text-transparent'>크레딧 구매시, 보너스 크레딧 증정</p>
                       <p className='text-[34px] pc:text-[28px] font-semibold text-text-blue-deep'>크레딧 상품을 구매하면 상품별<br/>보너스 크레딧을 증정합니다</p>
-                      <div >
+                      <div className=''>
                         <img className='w-[644px] mt-[66px]' src={process.env.PUBLIC_URL+'assets/img/screen.png'} alt="img" />
                       </div>
                   </div>  
@@ -145,17 +145,17 @@ export default function HomePage() {
               </div>
 
               <div className='flex flex-row justify-center mt-[40px] tablet:flex-wrap pc:flex-nowrap'>
-                <div className='pc:w-[855px] pc:h-[720px] tablet:h-[500px] tablet:w-full tablet:mr-0 bg-box-blue-light rounded-[25px] pc:mr-[54px] overflow-hidden'>
-                  <div className='pl-[54px] pt-[72px]'>
+                <div className='pc:w-[855px] pc:h-[720px] tablet:w-full tablet:h-[500px]  tablet:mr-0 bg-box-blue-light rounded-[25px] pc:mr-[54px] overflow-hidden'>
+                  <div className='px-[54px] pt-[72px]'>
                       <p className='text-[34px] pc:text-[28px] font-semibold text-text-blue-deep2'>전송 후 바로 발송확인 가능</p>
                       <p className='text-[34px] pc:text-[28px] font-semibold text-text-blue-light2'>메세지 전송 후 바로 발송현황 창에서<br/>현재 메시지 전송 현황을 알려드립니다</p>
-                      <div >
+                      <div className=''>
                         <img className='w-[800px] h-[440px] mt-[66px] pc:mt-[100px] rounded-[10px]' src={process.env.PUBLIC_URL+'assets/img/dashboard2.png'} alt="img" />
                       </div>
                     </div>  
                 </div>
 
-                <div className='pc:w-[520px] pc:h-[720px] tablet:h-[500px] tablet:w-full tablet:mt-[40px] pc:mt-0  bg-box-yellow-light rounded-[25px] relative overflow-hidden'>
+                <div className='pc:w-[520px] pc:h-[720px] tablet:w-full tablet:h-[500px] tablet:mt-[40px]  pc:mt-0  bg-box-yellow-light rounded-[25px] relative overflow-hidden'>
                   <div className='px-[55px] pt-[72px] overflow-hidden'>
                         <p className='text-[34px] pc:text-[28px] font-semibold text-text-brown'>누르면 바로 전송완료</p>
                         <p className='text-[34px] pc:text-[28px] font-semibold text-text-gray-2'>누르자마자 수신인에게<br/>바로 전달됩니다</p>
@@ -196,7 +196,7 @@ export default function HomePage() {
               <div>
                 <p className='text-[34px] pc:text-[28px] tablet:text-[24px]'>일반 SMS는 기본, 카카오톡까지</p>
                 <p className='text-[34px] pc:text-[28px] tablet:text-[24px] text-text-green-deep'>종류와 상관없이 모두 전송해 드립니다</p>
-                <div className='widepc:w-[342px] widepc:h-[310px] pc:w-[270px] pc:h-[250px] tablet:w-[200px] tablet:h-[180px] absolute tablet:bottom-[30px] pc:bottom-[67px] left-1/2 transform -translate-x-1/2'>
+                <div className='widepc:w-[342px] widepc:h-[310px] pc:w-[270px] pc:h-[250px] tablet:w-[250px] tablet:h-[200px] absolute tablet:bottom-[50px] tablet:right-[30px] pc:bottom-[67px] pc:left-1/2 transform pc:-translate-x-1/2'>
                   <img className=' rounded-[20px]' src={process.env.PUBLIC_URL+'assets/img/kaka02.png'} alt="img"/>
                 </div>
               </div>
@@ -216,7 +216,7 @@ export default function HomePage() {
               <div>
                 <p className='text-[34px] pc:text-[28px] tablet:text-[24px]'>놀라운 수신율을 경험해 보세요</p>
                 <p className='text-[34px] pc:text-[28px] tablet:text-[24px] text-[#727B88]'>샌드고의 정확한 수신율은 99.8%에 달합니다</p>
-                <div className='widepc:w-[704px] widepc:h-[286px] pc:w-[550px] pc:h-[220px] ] absolute bottom-[0px] left-1/2 transform -translate-x-1/2'>
+                <div className='widepc:w-[704px] widepc:h-[286px] tablet:w-[500px] tablet:h-[200px] pc:w-[550px] pc:h-[220px] ] absolute bottom-[0px] left-1/2 transform -translate-x-1/2'>
                   <img className=' rounded-[20px]' src={process.env.PUBLIC_URL+'assets/img/dashboard2.png'} alt="img"/>
                 </div>
               </div>
