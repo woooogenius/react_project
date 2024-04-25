@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import{Routes, Route} from 'react-router-dom'; 
 import SendMessagePage from './pages/SendMessagePage';
 
+
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage/>} exact/>
         <Route path='/send' element={<SendMessagePage/>}/>
+           
       </Routes>
 
 
