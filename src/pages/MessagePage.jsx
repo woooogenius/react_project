@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AddNumber from '../components/AddNumber'
 import Phone from '../components/Phone'
+import SendOption from '../components/SendOption'
 
 export default function MessagePage() {
 
@@ -31,12 +32,12 @@ export default function MessagePage() {
     },[])
 
   return (
-    <div className='w-full mt-[10px] pl-[124px] bg-white pb-[150px]'>
+    <div className='w-full mt-[10px] pc:pl-[124px] mobile:px-[20px] tablet:px-[30px] pc:pr-[30px] widepc:pr-0 bg-white pb-[150px]'>
         <div className='flex flex-wrap'>
             
 
-            <div className='w-1/2'>
-                <div className='text-[16px] text-[#525252] mt-[40px]'>
+            <div className='w-1/2 mobile:w-full tablet:w-full pc:w-1/2'>
+                <div className='text-[16px] text-[#525252] mt-[40px] mobile:text-[14px]'>
                     <p>- 간편하게 한 화면에서 단문, 장문 포토메세지를 발송할 수 있습니다.</p>
                     <p>- 90byte 초과 시 장문 문자로 자동 전환되며, 최대 2000byte까지 작성 가능합니다.</p>
                 </div>
@@ -48,20 +49,20 @@ export default function MessagePage() {
                 <div className='w-full'>
                     <h4 className='mt-[30px] text-[18px] font-semibold mb-[16px]'>현재 발송 가능 건수</h4>
 
-                    <ul className='w-full flex mt-[16px]'>
-                        <li className='w-[calc(33.3333%-33.3333px)]  flex justify-center items-center text-center mr-[50px]'>
+                    <ul className='w-full flex justify-around mt-[16px]'>
+                        <li className='widepc:w-[calc(33.3333%-33.3333px)] pc:w-[calc(33.3333%-20px)]  flex mobile:flex-col pc:flex-col widepc:flex-row justify-center items-center text-center widepc:mr-[50px] pc:mr-[20px]'>
                             <p className='w-[100px] h-[35px] leading-[35px] rounded-[30px] bg-[#E9EBFD] mr-[10px] text-[#5E2BFF]'>단문 SMS</p>
-                            <p>152건</p>
+                            <p className='mobile:mt-[10px] pc:mt-[10px] widepc:mt-0'>152건</p>
                         </li> 
 
-                        <li className='w-[calc(33.3333%-33.3333px)]  flex  justify-center items-center text-center  mr-[50px]'>
+                        <li className='widepc:w-[calc(33.3333%-33.3333px)] pc:w-[calc(33.3333%-20px)]  flex mobile:flex-col pc:flex-col widepc:flex-row  justify-center items-center text-center  widepc:mr-[50px] pc:mr-[20px]'>
                             <p className='w-[100px] h-[35px] leading-[35px] rounded-[30px] bg-[#f4e3df] mr-[10px] text-[#FA593B]'>장문 LMS</p>
-                            <p>152건</p>
+                            <p className='mobile:mt-[10px] pc:mt-[10px] widepc:mt-0'>152건</p>
                         </li> 
 
-                        <li className='w-[calc(33.3333%-33.3333px)]  flex  justify-center items-center text-center'>
+                        <li className='widepc:w-[calc(33.3333%-33.3333px)] pc:w-[calc(33.3333%-20px)]  flex mobile:flex-col pc:flex-col widepc:flex-row  justify-center items-center text-center'>
                             <p className='w-[100px] h-[35px] leading-[35px] rounded-[30px] bg-[#d1f0dc] mr-[10px] text-[#08AA40]'>포토 MMS</p>
-                            <p>152건</p>
+                            <p className='mobile:mt-[10px] pc:mt-[10px] widepc:mt-0'>152건</p>
                         </li> 
 
                         
@@ -86,9 +87,9 @@ export default function MessagePage() {
                     <h4 className='text-[18px] font-semibold mb-[16px]'>메세지 입력</h4>
 
                     <form className='p-[24px] bg-[#F6F6F6] border border-[#E1E3E5] rounded-[8px]'>
-                        <input type="text" placeholder='제목을 입력해주세요. (단문 SMS는 제외, 최대 30byte)' className='p-[20px] h-[60px] w-full border border-[#E0E0E0] rounded-[8px]'/>
+                        <input type="text" placeholder='제목을 입력해주세요. (단문 SMS는 제외, 최대 30byte)' className='p-[20px] mobile:text-[14px] h-[60px] w-full border border-[#E0E0E0] rounded-[8px]'/>
                         <div className='flex justify-between mt-[15px]'>
-                            <p className='px-[15px] py-[5px] bg-[#5E2BFF] text-white rounded-[30px]'>단문 SMS</p>
+                            <p className='px-[15px] py-[5px] bg-[#5E2BFF] mobile:text-[14px] text-white rounded-[30px]'>단문 SMS</p>
                             <div className='flex h-[35px] items-center'>
                                 <p><span id='length'>{ isWrite.length}</span> / 90byte</p>
                                 <p onClick={onClickRefresh} className='ml-[15px] w-[35px] h-[35px] border border-[#E1E3E5] rounded-[8px]  bg-white flex justify-center items-center'>
@@ -100,7 +101,7 @@ export default function MessagePage() {
                         </div>
 
                         <div className='mt-[16px] relative'>
-                            <textarea onChange={onChangeTextarea} name="sms_text" id="sms_text" cols="30" rows="10" className='w-full text-[18px] rounded-[8px] p-[20px] border border-[#E1E3E5] h-[295px] resize-none' placeholder='내용을 입력해 주세요. 90byte 초과 시 장문 문자로 이미지 추가시 포토 문자로 자동 전환 됩니다.'></textarea>
+                            <textarea onChange={onChangeTextarea} name="sms_text" id="sms_text" cols="30" rows="10" className='w-full mobile:text-[14px] text-[18px] rounded-[8px] p-[20px] border border-[#E1E3E5] h-[295px] resize-none' placeholder='내용을 입력해 주세요. 90byte 초과 시 장문 문자로 이미지 추가시 포토 문자로 자동 전환 됩니다.'></textarea>
                             <ul className='absolute bottom-[20px] right-[15px] flex'>
                                 <li className='px-[20px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px] mr-[8px]'>특수문자</li>
                                 <li className='px-[20px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px] mr-[8px]'>특수문자</li>
@@ -141,32 +142,8 @@ export default function MessagePage() {
 
                 <div className='w-full h-[1px] border-t border-[#CECECE] mt-[25px]'></div>
 
-                <div>
-                    <h4 className='text-[18px] font-semibold mt-[20px]'>발송설정</h4>
-                    <div className='flex justify-center items-center mt-[16px]'>
-                        <label className={`w-[calc(50%-15px)] h-[66px] leading-[66px] rounded-[8px] text-[18px] mr-[30px] transition ${isChecked === 'send' ? 'bg-white border border-[#4F44F0] text-[#4F44F0]':'bg-[#F2F5F9] text-[#747B84]'}`}>
-                            <input type="radio" name='send_btn' value='now' hidden defaultChecked={isChecked === 'send'} onChange={()=>handleChecked('send')}/>
-                            <div className='flex justify-center items-center'>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                                </svg>
-                                즉시발송   
-                            </div>
-                        </label>
 
-                        <label className={`w-[calc(50%-15px)] h-[66px] leading-[66px] rounded-[8px] text-[18px] transition ${isChecked === 'later' ? 'bg-white border border-[#4F44F0] text-[#4F44F0]':'bg-[#F2F5F9] text-[#747B84]'}`}>
-                            <input type="radio" name='send_btn' value='later' hidden defaultChecked={isChecked === 'later'} onChange={()=>handleChecked('later')}/>
-                            <div className='flex justify-center items-center'>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-                                </svg>
-                                예약발송   
-                            </div>
-                        </label>
-
-                       
-                    </div>
-                </div>
+                <SendOption/>
 
                 <div className='w-full h-[1px] border-t border-[#CECECE] mt-[25px]'></div>
 
@@ -178,9 +155,9 @@ export default function MessagePage() {
 
             </div>
 
-            <div className='w-1/2 relative'>
+            <div className='w-1/2 relative mobile:hidden tablet:hidden pc:block'>
 
-                <div className='w-[400px] h-[775px] border-[5px] border-[#4D4D4D] px-[20px] py-[40px] bg-[#B5D3F2] rounded-[22px]  sticky top-[100px] mt-[100px] ml-[100px]'>
+                <div className='widepc:w-[400px] pc:w-[350px] widepc:h-[775px] pc:h-[700px] border-[5px] border-[#4D4D4D] px-[20px] py-[40px] bg-[#B5D3F2] rounded-[22px]  sticky top-[100px] mt-[100px] ml-[100px]'>
 
                     <div className='flex text-center'>
                         <div className='w-[15%] text-[20px]'>

@@ -34,13 +34,13 @@ export default function SideMenu() {
                         </li>
 
                         <li className='flex justify-between mb-[20px]'>
-                            <p className='text-[#D7E0F4]'>보유 크레딧</p>
-                            <p>120,000</p>
+                            <p className='text-[#D7E0F4]'>주소록 그룹</p>
+                            <p>23 그룹</p>
                         </li>
 
                         <li className='flex justify-between'>
-                            <p className='text-[#D7E0F4]'>보유 크레딧</p>
-                            <p>120,000</p>
+                            <p className='text-[#D7E0F4]'>등록 발신 번호</p>
+                            <p>3개</p>
                         </li>
                     </ul>
                 </div>

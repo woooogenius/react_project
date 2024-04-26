@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import Footer from '../components/Footer'
 import { motion } from "framer-motion";
 import Header from '../components/Header';
-
+import { Link } from 'react-router-dom'
 export default function HomePage() {
 
 
@@ -22,7 +22,7 @@ export default function HomePage() {
                         <p className='bg-gradient-to-r from-text-gradient-from to-text-gradient-to inline-block bg-clip-text text-transparent'>문자 서비스 SEDNGO</p>
                     </motion.div>
 
-                    <motion.button initial={{ scale:1 }} whileHover={{scale:1.1,transition: {duration:0.7} }} className='w-[219px] pc:w-[180px] pc:h-[55px] pc:text-[18px] h-[65px] mt-[68px] bg-button_color rounded-[44px] text-[21px]'>메시지 전송하기</motion.button>
+                    <motion.button initial={{ scale:1 }} whileHover={{scale:1.1,transition: {duration:0.7} }} className='w-[219px] pc:w-[180px] pc:h-[55px] pc:text-[18px] h-[65px] mt-[68px] bg-button_color rounded-[44px] text-[21px]'><Link to='/send' className='text-white'>메세지 전송하기</Link></motion.button>
                   </div>
                 </div>
 

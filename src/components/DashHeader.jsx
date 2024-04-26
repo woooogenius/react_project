@@ -28,7 +28,7 @@ export default function DashHeader() {
   return (
     <>
         <div className='w-full h-[80px] bg-white fixed top-0 left-1/2 transform -translate-x-1/2 transition z-30'>
-            <div className={`w-[1920px] px-[25px] bg-white fixed top-0 left-1/2 transform -translate-x-1/2 transition z-30`}>
+            <div className={`widepc:w-[1920px] mobile:w-full pc:w-full tablet:w-full px-[25px] bg-white fixed top-0 left-1/2 transform -translate-x-1/2 transition z-30`}>
                 <div className='h-[80px] flex flex-row items-center justify-between'>
 
                     <div className='flex items-center'>
@@ -44,7 +44,7 @@ export default function DashHeader() {
                     </div>
                     
 
-                    <div className='flex items-center'>
+                    <div className='flex items-center mobile:hidden tablet:hidden pc:flex'>
                         <ul className='flex flex-row text-[18px] mr-[100px]'>
                             <li><Link to={'/send'}><div className={`mr-[115px]  transition`}>메시지</div></Link></li>
                             <li><Link><div className={`mr-[115px]   transition`}>크레딧</div></Link></li>
