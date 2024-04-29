@@ -20,6 +20,11 @@ export default function KakaoFriend() {
         document.getElementById('sms_text').value = ''
         document.getElementById('length').innerText = '0'
     }
+
+    const [isSelect, setIsSelect] = useState('none')
+    const handleSelect = (value)=>{
+      setIsSelect(value)
+    }
   return (
     <>
       <div className='w-full mt-[10px] pl-[124px] mobile:px-[20px] tablet:px-[30px]  bg-white pb-[150px] '>
@@ -49,22 +54,30 @@ export default function KakaoFriend() {
 
             <div>
               <h4 className='text-[18px] font-semibold mt-[30px]'>이미지 첨부</h4>
-              <label htmlFor="none">
-                <input type="radio" id='none' name='photo_radio' />
-                첨부안함
-              </label>
 
-              <label htmlFor="basic">
-                <input type="radio" id='basic' name='photo_radio' />
-                기본 이미지
-              </label>
+              <div className='my-[20px]'>
+                <label htmlFor="none" className={`mr-[30px] mobile:text-[14px] ${isSelect === 'none' ? 'text-button_color' : 'text-[#8D8D8D]'}`}>
+                  <input type="radio" id='none' name='photo_radio' value='none' defaultChecked={isSelect === 'none'} className='mr-[5px]' onChange={()=>handleSelect('none')}/>
+                  첨부안함
+                </label>
 
-              <label htmlFor="wide">
-                <input type="radio" id='wide' name='photo_radio' />
-                와이드 이미지
-              </label>
+                <label htmlFor="basic" className={`mr-[30px] mobile:text-[14px] ${isSelect === 'basic' ? 'text-button_color' : 'text-[#8D8D8D]'}`}>
+                  <input type="radio" id='basic' name='photo_radio' value='basic' className='mr-[5px]' onChange={()=>handleSelect('basic')}/>
+                  기본 이미지
+                </label>
 
-              <button className='w-full h-[60px] border border-[#5146F0] rounded-[8px]'>이미지 첨부</button>
+                <label htmlFor="wide" className={`mr-[30px] mobile:text-[14px] ${isSelect === 'wide' ? 'text-button_color' : 'text-[#8D8D8D]'}`}>
+                  <input type="radio" id='wide' name='photo_radio' value='wide' className='mr-[5px]' onChange={()=>handleSelect('wide')}/>
+                  와이드 이미지
+                </label>
+              </div>
+              
+              <button className='w-full h-[60px] border border-[#5146F0] text-button_color rounded-[8px]'>이미지 첨부</button>
+
+              <div className='mt-[20px] text-[#525252] mobile:text-[14px]'>
+                <p className='mb-[10px]'>- 파일 형식 및 용량 : jpg, png / 최대 500KB</p>
+                <p>- 권장 사이즈 : 720px * 720px <br/>(가로 500px 미만일 경우, 가로:세로 비율이 2:1 미만 또는 3:4 초과일 경우 업로드 불가)</p>
+              </div>
             </div>
 
             <div className='w-full h-[1px] border-t border-[#CECECE] mt-[40px]'></div>
@@ -88,37 +101,23 @@ export default function KakaoFriend() {
                         <div className='mt-[16px] relative'>
                             <textarea onChange={onChangeTextarea} name="sms_text" id="sms_text" cols="30" rows="10" className='w-full mobile:text-[14px] text-[18px] rounded-[8px] p-[20px] border border-[#E1E3E5] h-[295px] resize-none' placeholder='내용을 입력해 주세요. 90byte 초과 시 장문 문자로 이미지 추가시 포토 문자로 자동 전환 됩니다.'></textarea>
                             <ul className='absolute bottom-[20px] right-[15px] flex'>
-                                <li className='px-[20px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px] mr-[8px]'>특수문자</li>
-                                <li className='px-[20px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px] mr-[8px]'>특수문자</li>
-                                <li className='px-[20px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px]'>특수문자</li>
+                                <li className='px-[20px] mobile:px-[10px] mobile:text-[14px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px] mr-[8px]'>특수문자</li>
+                                <li className='px-[20px] mobile:px-[10px] mobile:text-[14px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px] mr-[8px]'>특수문자</li>
+                                <li className='px-[20px] mobile:px-[10px] mobile:text-[14px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px]'>특수문자</li>
                             </ul>
                         </div>
 
                         <div className='w-full h-[1px] border-t border-[#CECECE] mt-[40px]'></div>
 
                         <div className='mt-[25px] flex justify-between'>
-                            <h4 className='text-[18px] font-semibold'>광고성 문자(080 수신거부 포함)</h4>
-                            <div className={`w-[52px] h-[33px] rounded-full focus:outline-none ${isClick ? 'bg-blue-500' : 'bg-gray-300'}`} onClick={handleClick}>
+                            <h4 className='text-[18px] mobile:text-[16px] font-semibold'>광고성 문자(080 수신거부 포함)</h4>
+                            <div className={`w-[52px] h-[33px] rounded-full focus:outline-none ${isClick ? 'bg-[#08C600]' : 'bg-gray-300'}`} onClick={handleClick}>
                                 <span className={`inline-block overflow-hidden w-[33px] h-[33px]  bg-white rounded-full shadow-md transform transition ${isClick ? 'translate-x-5' : '-translate-x-2'}`}></span>
                             </div>
                         </div>
 
-                        <div className='w-full h-[1px] border-t border-[#CECECE] mt-[25px]'></div>
 
-                        <div className='mt-[16px]'>
-                            <h4 className='text-[18px] font-semibold'>이미지 추가</h4>
-                            <label className='w-[100px] h-[100px] flex justify-center items-center border border-[#CECECE] bg-white mt-[16px] cursor-pointer'>
-                                <input type="file"  hidden/>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                </svg>
-                            </label>
-
-                            <div className='mt-[16px] text-[#797979]'>
-                                <p>- 이미지는 최대 3장까지 첨부 가능합니다.</p>
-                                <p>- 이미지 파일 형식은 JPG, PNG, GIF만 가능합니다.</p>
-                            </div>
-                        </div>
+                        
 
 
 

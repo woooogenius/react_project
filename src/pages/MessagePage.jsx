@@ -103,16 +103,16 @@ export default function MessagePage() {
                         <div className='mt-[16px] relative'>
                             <textarea onChange={onChangeTextarea} name="sms_text" id="sms_text" cols="30" rows="10" className='w-full mobile:text-[14px] text-[18px] rounded-[8px] p-[20px] border border-[#E1E3E5] h-[295px] resize-none' placeholder='내용을 입력해 주세요. 90byte 초과 시 장문 문자로 이미지 추가시 포토 문자로 자동 전환 됩니다.'></textarea>
                             <ul className='absolute bottom-[20px] right-[15px] flex'>
-                                <li className='px-[20px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px] mr-[8px]'>특수문자</li>
-                                <li className='px-[20px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px] mr-[8px]'>특수문자</li>
-                                <li className='px-[20px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px]'>특수문자</li>
+                                <li className='px-[20px] mobile:px-[10px] mobile:text-[14px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px] mr-[8px]'>특수문자</li>
+                                <li className='px-[20px] mobile:px-[10px] mobile:text-[14px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px] mr-[8px]'>특수문자</li>
+                                <li className='px-[20px] mobile:px-[10px] mobile:text-[14px] py-[5px] bg-[#F5F5F5] text-[#646464] rounded-[30px]'>특수문자</li>
                             </ul>
                         </div>
 
                         <div className='w-full h-[1px] border-t border-[#CECECE] mt-[40px]'></div>
 
                         <div className='mt-[25px] flex justify-between'>
-                            <h4 className='text-[18px] font-semibold'>광고성 문자(080 수신거부 포함)</h4>
+                            <h4 className='text-[18px] mobile:text-[16px] font-semibold'>광고성 문자(080 수신거부 포함)</h4>
                             <div className={`w-[52px] h-[33px] rounded-full focus:outline-none ${isClick ? 'bg-blue-500' : 'bg-gray-300'}`} onClick={handleClick}>
                                 <span className={`inline-block overflow-hidden w-[33px] h-[33px]  bg-white rounded-full shadow-md transform transition ${isClick ? 'translate-x-5' : '-translate-x-2'}`}></span>
                             </div>
@@ -129,7 +129,7 @@ export default function MessagePage() {
                                 </svg>
                             </label>
 
-                            <div className='mt-[16px] text-[#797979]'>
+                            <div className='mt-[16px] text-[#797979] mobile:text-[14px]'>
                                 <p>- 이미지는 최대 3장까지 첨부 가능합니다.</p>
                                 <p>- 이미지 파일 형식은 JPG, PNG, GIF만 가능합니다.</p>
                             </div>
