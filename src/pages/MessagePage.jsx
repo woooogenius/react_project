@@ -31,6 +31,35 @@ export default function MessagePage() {
         setIsChecked('send')
     },[])
 
+
+    // 이미지업로드
+    const [uploadImg, setUploadImg] = useState([]);
+    const [previewImg, setPreviewImg] = useState([])
+
+    const onChangeImg = (e)=>{
+
+        let fileArr = e.target.files
+        let fileUrl = []
+        let filesLength = fileArr.length > 3 ? 3 : fileArr.length;
+    
+        setUploadImg(Array.from(fileArr))
+
+        for(let i =0; i < filesLength; i++){
+            let fileRead = new FileReader()
+            let file = fileArr[i];
+
+
+            fileRead.onload = function(){
+                
+                fileUrl[i]=fileRead.result
+                setPreviewImg([...fileUrl]);
+
+            }
+            fileRead.readAsDataURL(file);
+
+        }
+    }
+
   return (
     <div className='w-full mt-[10px] pc:pl-[124px] mobile:px-[20px] tablet:px-[30px] pc:pr-[30px] widepc:pr-0 bg-white pb-[150px]'>
         <div className='flex flex-wrap'>
@@ -122,12 +151,34 @@ export default function MessagePage() {
 
                         <div className='mt-[16px]'>
                             <h4 className='text-[18px] font-semibold'>이미지 추가</h4>
-                            <label className='w-[100px] h-[100px] flex justify-center items-center border border-[#CECECE] bg-white mt-[16px] cursor-pointer'>
-                                <input type="file"  hidden/>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                                </svg>
-                            </label>
+                           
+                            <div className='flex flex-row'>
+
+                                <label className='w-[100px] h-[100px] flex justify-center items-center border border-[#CECECE] bg-white mt-[16px] cursor-pointer'>
+                                    <input type="file" accept='image/*' onChange={onChangeImg} hidden multiple/>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                    </svg>
+                                </label>
+
+                                
+                           
+
+                                
+                                    <div className='w-[calc(100%-100px)] mt-[16px] flex items-center'>
+
+                                        {previewImg.map((img, index) => (
+                                            <div className='w-[100px] h-[100px] mobile:w-[50px] mobile:h-[50px] mx-[10px] 'key={index}>
+                                                <img key={index} src={img} alt='img' className='w-full h-full object-fit'/>
+                                            </div>
+                                            
+                                        ))}
+                                    </div>
+                                     
+                            </div>
+
+                            
+                            
 
                             <div className='mt-[16px] text-[#797979] mobile:text-[14px]'>
                                 <p>- 이미지는 최대 3장까지 첨부 가능합니다.</p>
@@ -157,7 +208,7 @@ export default function MessagePage() {
 
             <div className='w-1/2 relative mobile:hidden tablet:hidden pc:block'>
 
-                <div className='widepc:w-[400px] pc:w-[350px] widepc:h-[775px] pc:h-[700px] border-[5px] border-[#4D4D4D] px-[20px] py-[40px] bg-[#B5D3F2] rounded-[22px]  sticky top-[100px] mt-[100px] ml-[100px]'>
+                <div className='widepc:w-[400px] pc:w-[350px] widepc:h-[775px] pc:h-[700px] border-[5px] border-[#4D4D4D] px-[20px] py-[40px] bg-[#B5D3F2] rounded-[22px]  sticky top-[100px] mt-[100px] ml-[100px] overflow-y-scroll'>
 
                     <div className='flex text-center'>
                         <div className='w-[15%] text-[20px]'>
@@ -173,11 +224,28 @@ export default function MessagePage() {
                     
                     <div className='mt-[50px]'>
                         <p className='text-[18px]'>userId</p>
-                        <div className='bg-white p-[20px] rounded-[16px] mt-[16px] overflow-auto break-words'>
-                            {
-                                isWrite.length === 0 ? '이 영역은 미리보기 화면입니다.' : isWrite
-                            }
+                        <div className='bg-white p-[20px] rounded-[16px] mt-[16px] '>
+
+                            <div className='overflow-auto break-words '>
+                                {
+                                    isWrite.length === 0 ? '이 영역은 미리보기 화면입니다.' : isWrite
+                                }
+                                
+                            </div>
+                           
                         </div>
+                        <div className=''>
+                                {
+                                    previewImg.length === 0 ? null : 
+                                    previewImg.map((img, index) => (
+                                        <div className='w-full h-full  bg-white border border-[#CECECE] rounded-[16px] mt-[10px]'key={index}>
+                                            <img key={index} src={img} alt='img' className='w-full h-full object-cover rounded-[16px]'/>
+                                        </div>
+                                        
+                                    ))
+                                }
+                            </div>
+
                     </div>
 
                 </div>
