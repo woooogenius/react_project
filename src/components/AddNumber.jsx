@@ -1,22 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function AddNumber() {
+
+    //수신 번호 추가
+    const [addNumber, setAddNumber] = useState([])
+    const [number, setNumber] = useState('')
+    const onClickAddBtn = (number)=>{
+        setAddNumber([...addNumber, number])
+        setNumber('')
+    }
+    const onDeleteBtnClick = (idx)=>{
+        const delNumber = addNumber.filter((_,i)=>i!==idx)
+        setAddNumber(delNumber)
+    }
+
+    const onAllDeleteNumber = ()=>{
+        setAddNumber([])
+    }
+
+
   return (
     <>
                 <div>
                     <h4 className='text-[18px] font-semibold mt-[56px]'>수신번호</h4>
                     <div className='mt-[16px] flex'>
-                        <input type="text" placeholder='휴대폰번호(숫자만 입력)' className='w-[calc(85%-20px)] mobile:w-[calc(70%-20px)] h-[61px] rounded-[8px] p-[10px] border border-[#CECECE]'/>
-                        <button className='w-[calc(15%)] mobile:w-[calc(30%)] h-[61px] borderborder-[#CECECE] ml-[20px] rounded-[8px] bg-button_color text-white'>+ 추가</button>
+                        <input type="text" placeholder='휴대폰번호(숫자만 입력)' value={number} onChange={(e)=>setNumber(e.target.value)}  className='w-[calc(85%-20px)] mobile:w-[calc(70%-20px)] h-[61px] rounded-[8px] p-[10px] border border-[#CECECE]'/>
+                        <button onClick={()=>onClickAddBtn(number)} className='w-[calc(15%)] mobile:w-[calc(30%)] h-[61px] borderborder-[#CECECE] ml-[20px] rounded-[8px] bg-button_color text-white'>+ 추가</button>
                     </div>
 
                     <div className='w-full border border-[#CECECE] rounded-[8px] mt-[16px]'>
-                        <div className='p-[20px] h-[180px]'>
-                            <p className='widepc:text-[18px] pc:text-[16px] text-[#8D8D8D]'>번호 입력 후 헨터 혹은 추가하기를 클릭해 주세요. <br/>최대 1만 건 까지 붙여넣기 가능합니다.</p>
+                        <div className='p-[20px] h-[180px] '>
+                            <div className='flex flex-wrap'>
+
+                            
+                                {
+                                
+                                addNumber.length === 0 ?  <p className='widepc:text-[18px] pc:text-[16px] text-[#8D8D8D]'>번호 입력 후 헨터 혹은 추가하기를 클릭해 주세요. <br/>최대 1만 건 까지 붙여넣기 가능합니다.</p>  : 
+                                addNumber.map((val,idx)=>(
+                                    <div key={idx} className='mr-[10px] px-[10px] bg-[#F7F7F7] rounded-[10px] mb-[7px]'>
+                                        {val}
+                                        <button className='rounded-full ml-[10px] bg-[#575757] w-[20px] h-[20px] text-[12px] text-white' onClick={() => onDeleteBtnClick(idx)}>X</button>
+                                    </div>
+                                )
+                                )}
+                            </div>
+
+                            
                         </div>
                         <div className='flex h-[61px] p-[20px] border-t border-[#CECECE] justify-between'>
                             <p className='font-semibold widepc:text-[18px] pc:text-[16px]'>총 0명</p>
-                            <p className='underline text-[#6A6A6A] widepc:text-[18px] pc:text-[16px]'>모두 삭제</p>
+                            <p className='underline text-[#6A6A6A] widepc:text-[18px] pc:text-[16px] cursor-pointer' onClick={onAllDeleteNumber}>모두 삭제</p>
                         </div>
                     </div>
 

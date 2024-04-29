@@ -1,0 +1,86 @@
+import React, { useEffect, useState } from 'react'
+import AddNumber from '../components/AddNumber'
+import Phone from '../components/Phone'
+import SendOption from '../components/SendOption'
+
+export default function ResultPage() {
+
+   
+
+  return (
+    <div className='w-full mt-[10px] pc:pl-[124px] mobile:px-[20px] tablet:px-[30px] pc:pr-[30px] widepc:pr-[120px] bg-white pb-[150px]'>
+        <div className='flex flex-wrap'>
+            
+
+            <div className='w-full'>
+                <div className='text-[16px] text-[#525252] mt-[40px] mobile:text-[14px]'>
+                    <p>- 최근 90일동안 전송된 메시지를 확인할 수 있습니다.</p>
+                    <p>- 전송결과 완료 후 메시지 전송 실패 건은 사용한 충전금/포인트가 재충전 됩니다.</p>
+                </div>
+
+
+                <div className='flex justify-between mt-[56px]'>
+                    <div className=''>
+                        <input type="date" className='w-[165px] h-[55px] border border-[#CECECE] rounded-[8px] text-center' /> 
+                        <span className='mx-[10px]'>~</span> 
+                        <input type="date" className='w-[165px] h-[55px] border border-[#CECECE] rounded-[8px] text-center' /> 
+                    </div>
+
+                    <div className='flex'>
+                        <select name="select_message" id="select_message" className='w-[165px] h-[55px] border border-[#CECECE] rounded-[8px] mr-[15px] px-[10px]'>
+                            <option value="전체메시지">전체메시지</option>
+                            <option value="메시지">메시지</option>
+                        </select>
+
+                        
+                        <div className=' relative'>
+                            <input type="text" placeholder='제목 또는 번호입력' className='w-[210px] h-[55px] border border-[#CECECE] rounded-[8px] px-[10px]'/>
+                            <div className='absolute top-1/2 right-[10px] transform -translate-y-1/2 cursor-pointer'>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                 <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                                </svg>
+                            </div>
+                        </div> 
+
+                    </div>
+
+                   
+                
+                </div>
+
+                <div className='mt-[30px] border-t border-black '>
+                    <ul className='w-full h-[60px] bg-[#F3F4F8] flex items-center text-center p-[5px]'>
+                        <li className='w-[15%] border-r border-[#CECECE]'>일자</li>
+                        <li className='w-[25%] border-r border-[#CECECE]'>제목</li>
+                        <li className='w-[15%] border-r border-[#CECECE]'>메세지 형태</li>
+                        <li className='w-[15%] border-r border-[#CECECE]'>발송건수</li>
+                        <li className='w-[15%] border-r border-[#CECECE]'>발송상태</li>
+                        <li className='w-[15%] '>상세보기</li>
+                    </ul>
+
+                    <ul className='border-b border-[#CECECE] py-[30px]'>
+                        <div className='text-center text-[#3B3B3B]'>발송 내역이 없습니다</div>
+                    </ul>
+                </div>
+
+                <div className='flex justify-center items-center mt-[56px]'>
+                    <button className='w-[38px] h-[38px] text-white bg-button_color rounded-[8px]'>1</button>
+                </div>
+
+
+
+
+            </div>
+
+           
+
+
+
+        
+
+
+        </div>
+        
+    </div>
+  )
+}

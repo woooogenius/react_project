@@ -12,12 +12,13 @@ export default function SideMenu() {
 
     const navigate = useNavigate();
     const handleClick = (value)=>{
-        if(value === 'send'){
-            navigate('/send')
-        }else if(value === 'result'){
-            navigate('/')
-        }
+        setIsChecked(value)
+        navigate(`/${value}`)
+       
     }
+
+   
+   
 
   return (
     <>

@@ -6,7 +6,7 @@ import SendOption from '../components/SendOption'
 export default function KakaoAlert() {
   return (
     <>
-      <div className='w-full mt-[10px] pl-[124px] mobile:px-[20px] tablet:px-[30px]  bg-white pb-[150px] '>
+      <div className='w-full mt-[10px] pc:pl-[124px] mobile:px-[20px] tablet:px-[30px] pc:pr-[30px] widepc:pr-0 bg-white pb-[150px] '>
         <div className='flex flex-wrap'>
           
           <div className='mobile:w-full tablet:w-full pc:w-1/2 widepc:w-1/2'>
@@ -50,7 +50,7 @@ export default function KakaoAlert() {
           </div>
 
           <div className='w-1/2 mobile:hidden tablet:hidden pc:block widepc:block'>
-            <div className='border-[5px] border-black w-[400px] h-[758px] rounded-[22px] bg-[#B5D3F2] px-[20px] py-[40px] sticky top-[100px] mt-[100px] ml-[100px]' > 
+            <div className='border-[5px] border-black widepc:w-[400px] pc:w-[350px] widepc:h-[775px] pc:h-[700px] rounded-[22px] bg-[#B5D3F2] px-[20px] py-[40px] sticky top-[100px] mt-[100px] ml-[100px]' > 
               <div className='flex text-center'>
                   <div className='w-[15%] text-[20px]'>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

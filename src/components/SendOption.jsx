@@ -1,10 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function SendOption() {
     const [isChecked, setIsChecked] = useState('send')
     const handleChecked = (value)=>{
         setIsChecked(value)
     }
+
+
+    const today = new Date().toISOString().split('T')[0];
+    
+    const [selectedDate, setSelectedDate] = useState(today)
+    const onChangeDate = (e)=>{
+        setSelectedDate(e.target.value)
+    }
+
+    useEffect(()=>{
+        setSelectedDate(today)
+    },[])
   return (
     <>
         <div>
@@ -30,8 +42,25 @@ export default function SendOption() {
                     </div>
                  </label>
 
-                       
+                
             </div>
+            {
+                    isChecked === 'later' ?  
+                    <div className='flex mt-[20px] '>
+                        <input type="date" onChange={onChangeDate} value={selectedDate}  className='w-[calc(40%-6.6666px)] h-[60px] border border-[#CECECE] mr-[10px] rounded-[8px] text-center'/>
+                        <select name="time" id="time" className='w-[calc(30%-6.6666px)] h-[60px] border border-[#CECECE] mr-[10px] rounded-[8px] text-center'>
+                            <option value="1">1시</option>
+                            <option value="2">2시</option>
+                            <option value="3">3시</option>
+                        </select>
+                        <select name="minute" id="minute" className='w-[calc(30%-6.6666px)] h-[60px] border border-[#CECECE] rounded-[8px] text-center'>
+                            <option value="1분">1분</option>
+                            <option value="2분">2분</option>
+                            <option value="3분">3분</option>
+                        </select>
+                    </div>
+                    : ''
+                }
         </div>         
     </>
   )
