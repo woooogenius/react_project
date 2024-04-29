@@ -144,11 +144,9 @@ export default function KakaoFriend() {
               </div>
 
               <div>
-                <p className='mt-[50px] font-semibold'>카카오 채널명</p>
-                <div className='w-[300px] mt-[16px] relative'>
-                  <div className='w-[40px] h-[40px] bg-[#2B201F] text-white rounded-full text-[11px] flex justify-center items-center absolute right-[-15px] top-[-15px]'>kakao</div>
-                  <div className='bg-[#FBE54C] h-[50px] rounded-t-[16px] p-[16px]'>알림톡 도착</div>
-                  <div className='bg-white h-[50px] rounded-b-[16px] p-[16px]'>발신프로필 및 템플릿을 선택해 주세요</div>
+                <p className='mt-[50px] font-semibold'>(광고)카카오톡 채널명</p>
+                <div className='w-[300px] mt-[16px] overflow-auto break-words'>
+                  <div className='bg-white p-[15px]  rounded-[16px]'>{isWrite.length === 0 ? '이 영역은 미리보기 입니다' : isWrite}</div>
                 </div>
               </div>
 
