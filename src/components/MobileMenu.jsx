@@ -19,7 +19,7 @@ export default function MobileMenu({onClose}) {
         if(value === 'send'){
             navigate('/send')
         }else if(value === 'result'){
-            navigate('/')
+            navigate('/result')
         }
     }
   return (

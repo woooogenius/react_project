@@ -3,7 +3,7 @@ import AddNumber from '../components/AddNumber'
 import Phone from '../components/Phone'
 import SendOption from '../components/SendOption'
 
-export default function ResultPage() {
+export default function ResultKakao() {
 
     const today = new Date().toISOString().split('T')[0];
 
@@ -37,8 +37,8 @@ export default function ResultPage() {
 
                     <div className='flex mobile:w-full'>
                         <select name="select_message" id="select_message" className='pc:w-[165px] tablet:w-[130px] mobile:w-[calc(40%-5px)] h-[55px] border border-[#CECECE] rounded-[8px] mr-[15px] px-[10px]'>
-                            <option value="전체메시지">전체메시지</option>
-                            <option value="메시지">메시지</option>
+                            <option value="전체메시지">전체 카카오톡</option>
+                            <option value="메시지">카카오</option>
                         </select>
 
                         
