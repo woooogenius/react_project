@@ -4,6 +4,7 @@ import SideMenu from '../components/SideMenu'
 import MobileSideMenu from '../components/MobileSideMenu'
 import ResultKakao from './ResultKakao'
 import BuyCredit from './BuyCredit'
+import ListCredit from './ListCredit'
 
 export default function CreditPage() {
 
@@ -58,7 +59,7 @@ export default function CreditPage() {
                         <div className='w-full'>
 
                             {isChecked === 'buy' ? <BuyCredit/> : ''}
-                            {isChecked === 'list' ? <ResultKakao/> : ''}
+                            {isChecked === 'list' ? <ListCredit/> : ''}
 
                         </div>
 
