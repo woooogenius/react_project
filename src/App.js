@@ -6,6 +6,7 @@ import{Routes, Route} from 'react-router-dom';
 import SendMessagePage from './pages/SendMessagePage';
 import SendResult from './pages/SendResult';
 import CreditPage from './pages/CreditPage';
+import TemplatePage from './pages/TemplatePage';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/send' element={<SendMessagePage/>}/>
         <Route path='/result' element={<SendResult/>}/>
         <Route path='/credit' element={<CreditPage/>} />
+        <Route path='/template' element={<TemplatePage/>} />
            
       </Routes>
 
