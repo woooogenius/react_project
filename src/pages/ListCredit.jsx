@@ -17,7 +17,7 @@ export default function ListCredit() {
    
 
   return (
-    <div className='w-full mt-[10px] pc:pl-[124px] mobile:px-[20px] tablet:px-[30px] pc:pr-[30px] widepc:pr-[120px] bg-white pb-[150px]'>
+    <div className='w-full mt-[10px] pc:px-[124px] mobile:px-[20px] tablet:px-[30px]  widepc:pr-[120px] bg-white pb-[150px]'>
         <div className='flex flex-wrap'>
             
 
