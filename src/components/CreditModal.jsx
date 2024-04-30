@@ -5,15 +5,15 @@ export default function CreditModal({amount, onClose}) {
     <>
         <div className='w-screen h-screen bg-black fixed top-0 left-0 z-50 bg-opacity-50'>
             <div className='w-full relative'>
-                <div className='w-[825px] h-[530px] border border-[#CECECE] bg-white rounded-[10px] px-[16px] py-[24px] absolute t-1/2 left-1/2 transform translate-y-1/2 -translate-x-1/2'>
+                <div className='mobile:w-[90%] tablet:w-[90%] pc:w-[825px] h-[530px]  border border-[#CECECE] bg-white rounded-[10px] px-[16px] py-[24px] absolute t-1/2 left-1/2 transform translate-y-1/2 -translate-x-1/2 overflow-y-scroll'>
                     
                     <div className='flex justify-between  border-b border-[#CECECE] text-[18px]'>
                         <p className='pb-[24px]'>크레딧 구매</p>
                         <p onClick={onClose} className='cursor-pointer text-[20px]'>X</p>
                     </div>
 
-                    <div className='py-[24px] flex'>
-                        <div className='w-1/2 '>
+                    <div className='py-[24px] flex mobile:flex-wrap'>
+                        <div className='w-1/2 mobile:w-full'>
                             <p className='text-[18px]'>결제할 금액</p>
                             <p className='text-[32px] font-semibold'>{amount}원</p>
 
@@ -40,7 +40,7 @@ export default function CreditModal({amount, onClose}) {
                             </div>
                         </div>
 
-                        <div className='w-1/2 pl-[16px] '>
+                        <div className='w-1/2 pl-[16px] mobile:pl-0 mobile:mt-[30px] mobile:w-full'>
                             <div className=''>
                                 <p className='text-[18px] font-semibold'>결제수단</p>
                                 <select name="" id="" className='w-full border border-[#CECECE] h-[55px] rounded-[8px] mt-[7px] p-[10px] text-[#7B7B7B]'>
