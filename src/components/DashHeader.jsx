@@ -47,8 +47,8 @@ export default function DashHeader() {
                     <div className='flex items-center mobile:hidden tablet:hidden pc:flex'>
                         <ul className='flex flex-row text-[18px] mr-[100px]'>
                             <li><Link to={'/send'}><div className={`mr-[115px]  transition`}>메시지</div></Link></li>
-                            <li><Link><div className={`mr-[115px]   transition`}>크레딧</div></Link></li>
-                            <li><Link><div className={`transition`}>고객센터</div></Link></li>
+                            <li><Link to={'/credit'}><div className={`mr-[115px]   transition`}>크레딧</div></Link></li>
+                            <li><Link to={'/'}><div className={`transition`}>고객센터</div></Link></li>
                         </ul>
                         
                         <div className='flex items-center'>
