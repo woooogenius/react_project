@@ -53,7 +53,9 @@ export default function DashHeader() {
                         
                         <div className='flex items-center'>
                             <img src={process.env.PUBLIC_URL+'assets/img/alert.png'} alt="u=img" className='w-[27px] h-[27px] mr-[40px]' />
-                            <img src={process.env.PUBLIC_URL+'assets/img/user.png'} className='rounded-[50%] w-[40px] h-[40px]' alt="img" />
+                            <Link to={'/userpage'}>
+                                <img src={process.env.PUBLIC_URL+'assets/img/user.png'} className='rounded-[50%] w-[40px] h-[40px]' alt="img" />
+                            </Link>
                             <img src={process.env.PUBLIC_URL+'assets/img/down.png'} className='rounded-[50%] w-[20px] h-[20px] ml-[10px]' alt="img" />
                         </div>
 

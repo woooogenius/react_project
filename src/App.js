@@ -9,6 +9,7 @@ import CreditPage from './pages/CreditPage';
 import TemplatePage from './pages/TemplatePage';
 import NumberPage from './pages/NumberPage';
 import AddressPage from './pages/AddressPage';
+import UserPage from './pages/UserPage';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path='/template' element={<TemplatePage/>} />
         <Route path='/number' element={<NumberPage/>} />
         <Route path='/address' element={<AddressPage/>} />
+        <Route path='/userpage' element={<UserPage/>} />
            
       </Routes>
 
