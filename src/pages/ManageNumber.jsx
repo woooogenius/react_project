@@ -19,7 +19,7 @@ export default function ManageNumber() {
 
   return (
     <>
-    <div className='w-full mt-[10px] pc:px-[124px] mobile:px-[20px] tablet:px-[30px]  widepc:pr-[120px] bg-white pb-[150px] h-screen'>
+    <div className='w-full mt-[10px] pc:px-[124px] mobile:px-[20px] tablet:px-[30px]  widepc:pr-[120px] bg-white pb-[150px] min-h-[calc(100vh-220px)]'>
         <div className='flex flex-wrap'>
             
 

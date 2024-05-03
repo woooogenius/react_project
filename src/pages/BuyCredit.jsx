@@ -11,7 +11,7 @@ export default function BuyCredit() {
    
 
   return (
-    <div className='w-full mt-[10px] pc:pl-[124px] mobile:px-[20px] tablet:px-[30px] widepc:pr-[120px] bg-white pb-[150px]'>
+    <div className='w-full mt-[10px] pc:pl-[124px] mobile:px-[20px] tablet:px-[30px] bg-white pb-[150px]   min-h-[calc(100vh-220px)]'>
 
             <div className='w-full pt-[30px]'>
                 <div className='text-[16px] text-[#525252]   mobile:text-[14px]'>
