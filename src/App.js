@@ -10,6 +10,8 @@ import TemplatePage from './pages/TemplatePage';
 import NumberPage from './pages/NumberPage';
 import AddressPage from './pages/AddressPage';
 import UserPage from './pages/UserPage';
+import BusinessProfilePage from './pages/BusinessProfilePage';
+import JoinPage from './pages/JoinPage';
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
         <Route path='/number' element={<NumberPage/>} />
         <Route path='/address' element={<AddressPage/>} />
         <Route path='/userpage' element={<UserPage/>} />
+        <Route path='/business' element={<BusinessProfilePage/>}/>
+        <Route path='/join' element={<JoinPage/>}/>
            
       </Routes>
 

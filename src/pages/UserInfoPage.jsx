@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import TemplateModal from '../components/TemplateModal'
-import ModalDelete from '../components/ModalDelete'
-import ModalEdit from '../components/ModalEdit'
+import DelAccountModal from '../components/DelAccountModal'
 
 export default function UserInfoPage() {
 
@@ -43,6 +41,10 @@ export default function UserInfoPage() {
         }
     }
 
+    const [deleteAccount, setDeleteAccount] = useState(false)
+    const onClickDeleteAccount = ()=>{
+        setDeleteAccount(!deleteAccount)
+    }
 
   return (
     <>
@@ -51,7 +53,7 @@ export default function UserInfoPage() {
             
 
             <div className='w-full flex'>
-                <div className='pc:w-[40%] widepc:w-[40%] tablet:w-full mobile:w-full'>
+                <div className='pc:w-[50%] widepc:w-[40%] tablet:w-full mobile:w-full'>
 
                     {
                         !isCorrect ? 
@@ -68,7 +70,7 @@ export default function UserInfoPage() {
 
                                 <h4 className='text-[20px] mt-[50px]'>이메일</h4>
                                 <div className=' mt-[10px]'>
-                                    <input type="text" onChange={onChangeWrite} placeholder='이메일 입력(asdf@asdf.com)' className={`${setIsWrite.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
+                                    <input type="text" onChange={onChangeWrite} placeholder='이메일 입력(asdf@asdf.com)' className={`${isWrite.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
                                 </div>
                                 
 
@@ -76,7 +78,7 @@ export default function UserInfoPage() {
                                 <div>
                                     <h4 className='text-[20px] mt-[50px]'>비밀번호</h4>
                                     <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangePasswd} placeholder='비밀번호 입력(asdfasdf)' className={`${setIsWritePasswd.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
+                                        <input type="text" onChange={onChangePasswd} placeholder='비밀번호 입력(asdfasdf)' className={`${isWritePasswd.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
                                     </div> 
                                 </div>
 
@@ -108,7 +110,7 @@ export default function UserInfoPage() {
 
                                 <h4 className='text-[16px] mt-[20px]'>이메일</h4>
                                 <div className=' mt-[10px]'>
-                                    <input type="text" onChange={onChangeWrite} value={isWrite} placeholder='이메일' className={`${setIsWrite.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
+                                    <input type="text" onChange={onChangeWrite} value={isWrite} placeholder='이메일' className={`${isWrite.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
                                 </div>
                                 
 
@@ -116,14 +118,14 @@ export default function UserInfoPage() {
                                 <div>
                                     <h4 className='text-[16px] mt-[30px]'>이름</h4>
                                     <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangeName} placeholder='이름' value={name} className={`${setName.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
+                                        <input type="text" onChange={onChangeName} placeholder='이름' value={name} className={`${name.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
                                     </div> 
                                 </div>
 
                                 <div>
                                     <h4 className='text-[16px] mt-[30px]'>휴대폰 번호</h4>
                                     <div className=' mt-[10px] flex'>
-                                        <input type="text" onChange={onChangePhoneNum} value={phoneNum} placeholder='휴대폰번호' className={`${setPhoneNum.length > 0 ? 'bg-[#F2F5F9]' : ''} w-[calc(80%-16px)] h-[55px]  border border-[#CECECE] rounded-[8px] px-[15px]`}/>
+                                        <input type="text" onChange={onChangePhoneNum} value={phoneNum} placeholder='휴대폰번호' className={`${phoneNum.length > 0 ? 'bg-[#F2F5F9]' : ''} w-[calc(80%-16px)] h-[55px]  border border-[#CECECE] rounded-[8px] px-[15px]`}/>
                                         <button onClick={onClickChangeNum} className='w-[calc(20%)] ml-[16px] rounded-[8px] border border-[#5146F0] text-[#5146F0]'>변경하기</button>
                                     </div> 
                                 </div>
@@ -131,7 +133,7 @@ export default function UserInfoPage() {
 
 
                                 
-                                <p className='underline text-[#484848] mt-[72px] cursor-pointer text-[18px]'>계정탈퇴</p>
+                                <p onClick={onClickDeleteAccount} className='underline text-[#484848] mt-[72px] cursor-pointer text-[18px]'>계정탈퇴</p>
                                
 
                             </div>
@@ -144,7 +146,7 @@ export default function UserInfoPage() {
                 
 
 
-                <div className='w-[60%]'>
+                <div className='pc:w-[60%] tablet:hidden mobile:hidden'>
 
                 </div>
 
@@ -166,7 +168,11 @@ export default function UserInfoPage() {
         
     </div>
 
-  
+    {
+        deleteAccount ?  <DelAccountModal onClose={()=>setDeleteAccount(false)} /> : ''
+
+    }
+
    
     </>
   )

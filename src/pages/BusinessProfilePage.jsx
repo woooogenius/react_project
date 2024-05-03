@@ -4,11 +4,11 @@ import SideMenu from '../components/SideMenu'
 import MobileSideMenu from '../components/MobileSideMenu'
 import UserInfoPage from './UserInfoPage'
 import ChangePasswd from './ChangePasswd'
-import { Link } from 'react-router-dom'
+import ManageBusinessProfile from './ManageBusinessProfile'
 
-export default function UserPage() {
+export default function BusinessProfilePage() {
 
-    const [isChecked, setIsChecked] = useState('userinfo')
+    const [isChecked, setIsChecked] = useState('profile')
 
     const handleChecked = (value)=>{
         setIsChecked(value);
@@ -38,25 +38,20 @@ export default function UserPage() {
                             
                             <ul className='flex'>
                                 <li className='text-[18px] mobile:text-[16px] mr-[72px] mobile:mr-[20px]'>
-                                    <label htmlFor='sub01' className={`cursor-pointer pb-[10px] transition ${isChecked === 'userinfo' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
-                                        <input type="radio" id='sub01' name='submenu' value='userinfo'  defaultChecked={isChecked === 'userinfo'}  onChange={()=>handleChecked('userinfo')} hidden/>
-                                        회원정보
+                                    <label htmlFor='sub01' className={`cursor-pointer pb-[10px] transition ${isChecked === 'profile' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
+                                        <input type="radio" id='sub01' name='submenu' value='profile'  defaultChecked={isChecked === 'profile'}  onChange={()=>handleChecked('profile')} hidden/>
+                                        프로필 관리
                                     </label>
                                 </li>
 
                                 <li className='text-[18px] mobile:text-[16px] mr-[72px] mobile:mr-[20px]'>
-                                    <label htmlFor='sub02' className={`cursor-pointer pb-[10px] transition ${isChecked === 'changepw' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
-                                        <input type="radio" id='sub02' name='submenu' value='changepw'  defaultChecked={isChecked === 'changepw'}  onChange={()=>handleChecked('changepw')} hidden/>
-                                        비밀번호 변경
+                                    <label htmlFor='sub02' className={`cursor-pointer pb-[10px] transition ${isChecked === 'management' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
+                                        <input type="radio" id='sub02' name='submenu' value='management'  defaultChecked={isChecked === 'management'}  onChange={()=>handleChecked('management')} hidden/>
+                                        유지 관리
                                     </label>
                                 </li>
 
-                                <li className='text-[18px] mobile:text-[16px] mr-[72px] mobile:mr-[20px]'>
-                                    <label htmlFor='sub03' className={`cursor-pointer pb-[10px] transition ${isChecked === 'business' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
-                                        <input type="radio" id='sub03' name='submenu' value='business'  defaultChecked={isChecked === 'business'}  onChange={()=>handleChecked('business')} hidden/>
-                                        <Link to={'/business'}>기업프로필 추가</Link>
-                                    </label>
-                                </li>
+                                
                                
                             </ul>
 
@@ -66,9 +61,8 @@ export default function UserPage() {
                         </div>
                         <div className='w-full'>
 
-                            {isChecked === 'userinfo' ? <UserInfoPage/> : ''}
-                            {isChecked === 'changepw' ? <ChangePasswd/> : ''}
-                            {isChecked === 'business' ? '기업프로필' : ''}
+                            {isChecked === 'profile' ? <ManageBusinessProfile/> : ''}
+                            {isChecked === 'management' ? <ChangePasswd/> : ''}
 
                         </div>
 
