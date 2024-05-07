@@ -5,6 +5,7 @@ import MobileSideMenu from '../../components/MobileSideMenu'
 import ResultKakao from '../Result/ResultKakao'
 import BuyCredit from './BuyCredit'
 import ListCredit from './ListCredit'
+import Page from '../../components/Page'
 
 export default function CreditPage() {
 
@@ -15,62 +16,27 @@ export default function CreditPage() {
     }
 
 
-    
+    const sections = [
+        {
+            title : '크레딧',
+            components : [
+                {name : 'buyCredit', label : '크레딧 구매', component : BuyCredit},
+                {name : 'buyList', label : '구매 내역', component : ListCredit},
+                // {name : 'useList', label : '사용 내역', component : }
+
+            ]
+        },
+       
+    ]
    
   return (
     <>
-        <div className='w-full pt-[80px]'>
 
-            <DashHeader/>
-            <div className='widepc:w-[1920px] mobile:w-full tablet:w-full pc:w-full m-auto bg-[#F3F4F8]'>
-                <div className='w-full flex '>
-                    <div className='pc:block widepc:block mobile:hidden tablet:hidden'>
-                        <SideMenu/>
-                    </div>
-                    <div className='pc:hidden widepc:hidden mobile:hidden tablet:block'>
-                        <MobileSideMenu/>
-                    </div>
-                    <div className='w-full'>
-                        <div className='widepc:px-[124px] pc:px-[124px] mobile:px-[20px] tablet:px-[30px]'>
-                            <h4 className='text-[28px] mobile:text-[22px] my-[30px] font-bold'>
-                                크레딧
-                            </h4>
-                            
-                            <ul className='flex'>
-                                <li className='text-[18px] mobile:text-[16px] mr-[72px] mobile:mr-[20px]'>
-                                    <label htmlFor='sub01' className={`cursor-pointer pb-[10px] transition ${isChecked === 'buy' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
-                                        <input type="radio" id='sub01' name='submenu' value='buy'  defaultChecked={isChecked === 'buy'}  onChange={()=>handleChecked('buy')} hidden/>
-                                        크레딧 구매
-                                    </label>
-                                </li>
-                                <li className='text-[18px] mobile:text-[16px] mr-[72px] mobile:mr-[20px]'>
-                                    <label htmlFor='sub02' className={`cursor-pointer pb-[10px] transition ${isChecked ==='list' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
-                                        <input type="radio" id='sub02' name='submenu' value='list' defaultChecked={isChecked === 'list'} onChange={()=>handleChecked('list')} hidden/>
-                                        크레딧 내역 
-                                    </label>
-                                </li>
-                                
-                            </ul>
-
-                        
-
-
-                        </div>
-                        <div className='w-full'>
-
-                            {isChecked === 'buy' ? <BuyCredit/> : ''}
-                            {isChecked === 'list' ? <ListCredit/> : ''}
-
-                        </div>
-
-                    </div>
-                    
-                    
-
-                </div>
-            </div>
-
-        </div>
+        {
+            sections.map((val,idx)=>(
+                <Page key={idx} title={val.title} components={val.components}/>
+            ))
+        }
        
         
         
