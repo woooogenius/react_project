@@ -21,7 +21,7 @@ export default function JoinPage() {
     }
 
     const handleCheck = (checked, id) =>{
-        if(id == 'all'){
+        if(id === 'all'){
             handleAllCheck(checked)
         }else{
             setCheckItems(prev=>({
@@ -128,9 +128,6 @@ export default function JoinPage() {
             <div className='border-b border-[#CECECE] w-full mt-[30px]'></div>
 
             <button onClick={onClickJoin} className='w-full rounded-[8px] h-[56px] text-white bg-button_color mt-[80px] mb-[100px]'>가입하기</button>
-
-
-
 
 
         </div>
