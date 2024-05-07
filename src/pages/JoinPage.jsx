@@ -1,11 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import JoinHeader from '../components/JoinHeader'
+import ModalDelete from '../components/ModalDelete'
+import BasicModal from '../components/BasicModal'
 
 export default function JoinPage() {
+
+    const [checkItems, setCheckItems] = useState({
+        agree : false,
+        third : false,
+        terms : false,
+        all : false,
+    })
+
+    const handleAllCheck = (checked)=>{
+        setCheckItems({
+            agree : checked,
+            third : checked,
+            terms : checked,
+            all : checked,
+        })
+    }
+
+    const handleCheck = (checked, id) =>{
+        if(id == 'all'){
+            handleAllCheck(checked)
+        }else{
+            setCheckItems(prev=>({
+                ...prev,
+                [id]:checked
+            }))
+        }
+
+    }
+
+
+    const [isJoin, setIsJoin] = useState(false)
+    const onClickJoin = ()=>{
+        setIsJoin(true)
+    }
+
+    
+
   return (
     <>
         <JoinHeader/>
-        <div className='pt-[80px] w-[560px] m-auto '>
+        <div className='pt-[80px] tablet:w-[560px] m-auto mobile:w-[full] mobile:px-[20px]'>
             <h4 className=' mt-[50px] text-center text-[24px] font-bold'>회원가입</h4>
              <div className='flex items-center justify-center'>
                 <label htmlFor="profile_img" className='inline-block mt-[72px] relative'>
@@ -67,16 +106,39 @@ export default function JoinPage() {
 
            <div className='border-b border-[#CECECE] w-full mt-[30px]'></div>
 
-            <div className='flex text-[#1C1C1C] my-[26px]'>
-                <input type="checkbox" className='w-[22px] h-[22px] mr-[15px] rounded-[6px] border border-[#CECECE]'/>
+            <label htmlFor='all' className='flex text-[#1C1C1C] my-[26px]'>
+                <input id='all' onChange={(e)=> handleAllCheck(e.target.checked)} checked={checkItems.all} type="checkbox" className='w-[22px] h-[22px] mr-[15px] rounded-[6px] border border-[#CECECE]'/>
                 <p>모든 약관에 동의합니다</p>
-            </div>
+            </label>
 
            <div className='border-b border-[#CECECE] w-full mt-[30px]'></div>
+
+            <label htmlFor='agree' className='flex text-[#1C1C1C] my-[26px]'>
+                <input id='agree' checked={checkItems.agree} onChange={(e)=>handleCheck(e.target.checked, e.target.id)} type="checkbox" className='w-[22px] h-[22px] mr-[15px] rounded-[6px] border border-[#CECECE]'/>
+                <p>(필수) 개인정보 수집에 동의합니다</p>
+            </label>
+            <label htmlFor='third' className='flex text-[#1C1C1C] my-[26px]'>
+                <input id='third' checked={checkItems.third} onChange={(e)=>handleCheck(e.target.checked, e.target.id)} type="checkbox" className='w-[22px] h-[22px] mr-[15px] rounded-[6px] border border-[#CECECE]'/>
+                <p>(필수) 제 3자 제공 동의</p>
+            </label>
+            <label htmlFor='terms' className='flex text-[#1C1C1C] my-[26px]'>
+                <input id='terms' checked={checkItems.terms} onChange={(e)=>handleCheck(e.target.checked, e.target.id)} type="checkbox" className='w-[22px] h-[22px] mr-[15px] rounded-[6px] border border-[#CECECE]'/>
+                <p>(약관 내용)에 동의합니다</p>
+            </label>
+
+            <div className='border-b border-[#CECECE] w-full mt-[30px]'></div>
+
+            <button onClick={onClickJoin} className='w-full rounded-[8px] h-[56px] text-white bg-button_color mt-[80px] mb-[100px]'>가입하기</button>
+
+
 
 
 
         </div>
+
+        {
+            isJoin ? <BasicModal onClose={()=>setIsJoin(false) } modalTitle={'가입완료'} modalContent={'회원가입이 완료되었습니다'} modalContent2={'샌드고 서비스를 이용해보세요!'} imgSrc={process.env.PUBLIC_URL+'assets/img/checkround.png'}/> : null
+        }
     </>
   )
 }
