@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import DelAccountModal from '../components/DelAccountModal'
+import DelAccountModal from '../../components/DelAccountModal'
 
 export default function ChangePasswd() {
 

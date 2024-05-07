@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import DashHeader from '../components/DashHeader'
-import SideMenu from '../components/SideMenu'
-import MobileSideMenu from '../components/MobileSideMenu'
-import ResultKakao from './ResultKakao'
+import DashHeader from '../../components/DashHeader'
+import SideMenu from '../../components/SideMenu'
+import MobileSideMenu from '../../components/MobileSideMenu'
+import ResultKakao from '../Result/ResultKakao'
 import BuyCredit from './BuyCredit'
 import ListCredit from './ListCredit'
 

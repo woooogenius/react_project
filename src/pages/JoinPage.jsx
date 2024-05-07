@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import JoinHeader from '../components/JoinHeader'
-import ModalDelete from '../components/ModalDelete'
 import BasicModal from '../components/BasicModal'
 
 export default function JoinPage() {

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import DashHeader from '../components/DashHeader'
-import SideMenu from '../components/SideMenu'
+import DashHeader from '../../components/DashHeader'
+import SideMenu from '../../components/SideMenu'
 import { Link, NavLink, Outlet, Route, Routes, useNavigate } from 'react-router-dom'
-import MessagePage from './MessagePage'
-import KakaoAlert from './KakaoAlert'
-import KakaoFriend from './KakaoFriend'
-import MobileSideMenu from '../components/MobileSideMenu'
+import MessagePage from '../Send/MessagePage'
+import KakaoAlert from '../Send/KakaoAlert'
+import KakaoFriend from '../Send/KakaoFriend'
+import MobileSideMenu from '../../components/MobileSideMenu'
 
 export default function SendMessagePage() {
 

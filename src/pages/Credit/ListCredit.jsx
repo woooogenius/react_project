@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import AddNumber from '../components/AddNumber'
-import Phone from '../components/Phone'
-import SendOption from '../components/SendOption'
+import AddNumber from '../../components/AddNumber'
+import Phone from '../../components/Phone'
+import SendOption from '../../components/SendOption'
 
-export default function ResultPage() {
+export default function ListCredit() {
 
     const today = new Date().toISOString().split('T')[0];
 
@@ -17,14 +17,14 @@ export default function ResultPage() {
    
 
   return (
-    <div className='w-full mt-[10px] pc:px-[124px] mobile:px-[20px] tablet:px-[30px]  widepc:pr-[120px] bg-white pb-[150px] min-h-[calc(100vh-220px)]'>
+    <div className='w-full mt-[10px] pc:px-[124px] mobile:px-[20px] tablet:px-[30px]  widepc:pr-[120px] bg-white pb-[150px]  min-h-[calc(100vh-220px)]'>
         <div className='flex flex-wrap'>
             
 
             <div className='w-full'>
                 <div className='text-[16px] text-[#525252] mt-[40px] mobile:text-[14px]'>
-                    <p>- 최근 90일동안 전송된 메시지를 확인할 수 있습니다.</p>
-                    <p>- 전송결과 완료 후 메시지 전송 실패 건은 사용한 충전금/포인트가 재충전 됩니다.</p>
+                    <p>- 크레딧 구입 내역 및 결제상태, 사용내역 등을 확인하실 수 있습니다.</p>
+                    <p>- 크레딧 내역은 최대 1년까지만 보관됩니다.</p>
                 </div>
 
 
@@ -37,8 +37,8 @@ export default function ResultPage() {
 
                     <div className='flex mobile:w-full'>
                         <select name="select_message" id="select_message" className='pc:w-[165px] tablet:w-[130px] mobile:w-[calc(40%-5px)] h-[55px] border border-[#CECECE] rounded-[8px] mr-[15px] px-[10px]'>
-                            <option value="전체메시지">전체메시지</option>
-                            <option value="메시지">메시지</option>
+                            <option value="전체이용내역">전체 이용내역</option>
+                            <option value="크레딧">sample01</option>
                         </select>
 
                         
@@ -60,10 +60,10 @@ export default function ResultPage() {
                 <div className='mt-[30px] border-t border-black '>
                     <ul className='w-full h-[60px] bg-[#F3F4F8] flex items-center text-center p-[5px]'>
                         <li className='w-[15%] border-r border-[#CECECE]'>일자</li>
-                        <li className='w-[25%] border-r border-[#CECECE]'>제목</li>
-                        <li className='w-[15%] border-r border-[#CECECE]'>메세지 형태</li>
-                        <li className='w-[15%] border-r border-[#CECECE]'>발송건수</li>
-                        <li className='w-[15%] border-r border-[#CECECE]'>발송상태</li>
+                        <li className='w-[25%] border-r border-[#CECECE]'>주문번호</li>
+                        <li className='w-[15%] border-r border-[#CECECE]'>구매 크레딧</li>
+                        <li className='w-[15%] border-r border-[#CECECE]'>금액</li>
+                        <li className='w-[15%] border-r border-[#CECECE]'>결제상태</li>
                         <li className='w-[15%] '>상세보기</li>
                     </ul>
 

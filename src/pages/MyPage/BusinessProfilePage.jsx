@@ -1,25 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import DashHeader from '../components/DashHeader'
-import SideMenu from '../components/SideMenu'
-import MessagePage from './MessagePage'
-import KakaoAlert from './KakaoAlert'
-import KakaoFriend from './KakaoFriend'
-import MobileSideMenu from '../components/MobileSideMenu'
-import ResultPage from './ResultPage'
-import ResultKakao from './ResultKakao'
+import DashHeader from '../../components/DashHeader'
+import SideMenu from '../../components/SideMenu'
+import MobileSideMenu from '../../components/MobileSideMenu'
+import UserInfoPage from './UserInfoPage'
+import ChangePasswd from './ChangePasswd'
+import ManageBusinessProfile from './ManageBusinessProfile'
 
-export default function SendResult() {
+export default function BusinessProfilePage() {
 
-    const [isChecked, setIsChecked] = useState('result')
+    const [isChecked, setIsChecked] = useState('profile')
 
     const handleChecked = (value)=>{
         setIsChecked(value);
     }
 
 
-    // useEffect(()=>{
-    //     setIsChecked('result')
-    // },[])
+   
    
   return (
     <>
@@ -37,23 +33,26 @@ export default function SendResult() {
                     <div className='w-full'>
                         <div className='widepc:px-[124px] pc:px-[124px] mobile:px-[20px] tablet:px-[30px]'>
                             <h4 className='text-[28px] mobile:text-[22px] my-[30px] font-bold'>
-                                발송결과
+                                마이페이지
                             </h4>
                             
                             <ul className='flex'>
                                 <li className='text-[18px] mobile:text-[16px] mr-[72px] mobile:mr-[20px]'>
-                                    <label htmlFor='sub01' className={`cursor-pointer pb-[10px] transition ${isChecked === 'result' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
-                                        <input type="radio" id='sub01' name='submenu' value='result'  defaultChecked={isChecked === 'result'}  onChange={()=>handleChecked('result')} hidden/>
-                                        발송결과
+                                    <label htmlFor='sub01' className={`cursor-pointer pb-[10px] transition ${isChecked === 'profile' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
+                                        <input type="radio" id='sub01' name='submenu' value='profile'  defaultChecked={isChecked === 'profile'}  onChange={()=>handleChecked('profile')} hidden/>
+                                        프로필 관리
                                     </label>
                                 </li>
+
                                 <li className='text-[18px] mobile:text-[16px] mr-[72px] mobile:mr-[20px]'>
-                                    <label htmlFor='sub02' className={`cursor-pointer pb-[10px] transition ${isChecked ==='kakao' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
-                                        <input type="radio" id='sub02' name='submenu' value='kakao' defaultChecked={isChecked === 'kakao'} onChange={()=>handleChecked('kakao')} hidden/>
-                                        카카오 
+                                    <label htmlFor='sub02' className={`cursor-pointer pb-[10px] transition ${isChecked === 'management' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
+                                        <input type="radio" id='sub02' name='submenu' value='management'  defaultChecked={isChecked === 'management'}  onChange={()=>handleChecked('management')} hidden/>
+                                        유지 관리
                                     </label>
                                 </li>
+
                                 
+                               
                             </ul>
 
                         
@@ -62,8 +61,8 @@ export default function SendResult() {
                         </div>
                         <div className='w-full'>
 
-                            {isChecked === 'result' ? <ResultPage/> : ''}
-                            {isChecked === 'kakao' ? <ResultKakao/> : ''}
+                            {isChecked === 'profile' ? <ManageBusinessProfile/> : ''}
+                            {isChecked === 'management' ? <ChangePasswd/> : ''}
 
                         </div>
 
@@ -76,7 +75,7 @@ export default function SendResult() {
 
         </div>
        
-        
+       
         
     </>
   )

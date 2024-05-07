@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import AddNumber from '../components/AddNumber'
-import SendOption from '../components/SendOption'
+import AddNumber from '../../components/AddNumber'
+import SendOption from '../../components/SendOption'
 
 export default function KakaoFriend() {
 

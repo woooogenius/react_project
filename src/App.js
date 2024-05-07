@@ -3,14 +3,14 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import{Routes, Route} from 'react-router-dom'; 
-import SendMessagePage from './pages/SendMessagePage';
-import SendResult from './pages/SendResult';
-import CreditPage from './pages/CreditPage';
-import TemplatePage from './pages/TemplatePage';
-import NumberPage from './pages/NumberPage';
-import AddressPage from './pages/AddressPage';
-import UserPage from './pages/UserPage';
-import BusinessProfilePage from './pages/BusinessProfilePage';
+import SendMessagePage from './pages/Send/SendMessagePage';
+import SendResult from './pages/Result/SendResult';
+import CreditPage from './pages/Credit/CreditPage';
+import TemplatePage from './pages/Template/TemplatePage';
+import NumberPage from './pages/Number/NumberPage';
+import AddressPage from './pages/Address/AddressPage';
+import UserPage from './pages/MyPage/UserPage';
+import BusinessProfilePage from './pages/MyPage/BusinessProfilePage';
 import JoinPage from './pages/JoinPage';
 
 

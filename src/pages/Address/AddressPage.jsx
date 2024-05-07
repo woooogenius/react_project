@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import DashHeader from '../components/DashHeader'
-import SideMenu from '../components/SideMenu'
-import MobileSideMenu from '../components/MobileSideMenu'
+import DashHeader from '../../components/DashHeader'
+import SideMenu from '../../components/SideMenu'
+import MobileSideMenu from '../../components/MobileSideMenu'
 import ManageAddress from './ManageAddress'
 
 export default function AddressPage() {

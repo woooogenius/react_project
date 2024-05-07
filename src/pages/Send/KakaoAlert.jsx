@@ -1,7 +1,7 @@
 import React from 'react'
-import AddNumber from '../components/AddNumber'
-import Phone from '../components/Phone'
-import SendOption from '../components/SendOption'
+import AddNumber from '../../components/AddNumber'
+import Phone from '../../components/Phone'
+import SendOption from '../../components/SendOption'
 
 export default function KakaoAlert() {
   return (

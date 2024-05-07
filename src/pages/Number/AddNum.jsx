@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import TemplateModal from '../components/TemplateModal'
-import ModalDelete from '../components/ModalDelete'
-import ModalEdit from '../components/ModalEdit'
+import TemplateModal from '../../components/TemplateModal'
+import ModalDelete from '../../components/ModalDelete'
+import ModalEdit from '../../components/ModalEdit'
 
 export default function AddNum() {
 

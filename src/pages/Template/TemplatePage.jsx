@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import DashHeader from '../components/DashHeader'
-import SideMenu from '../components/SideMenu'
-import MobileSideMenu from '../components/MobileSideMenu'
+import DashHeader from '../../components/DashHeader'
+import SideMenu from '../../components/SideMenu'
+import MobileSideMenu from '../../components/MobileSideMenu'
 import AddTemplate from './AddTemplate'
-import ManageNumber from './ManageNumber'
-import AddNum from './AddNum'
+import TemplateModal from '../../components/TemplateModal'
+import ModalBasic from '../../components/ModalDelete'
 
-export default function NumberPage() {
+export default function TemplatePage() {
 
-    const [isChecked, setIsChecked] = useState('numbers')
+    const [isChecked, setIsChecked] = useState('template')
 
     const handleChecked = (value)=>{
         setIsChecked(value);
@@ -33,21 +33,14 @@ export default function NumberPage() {
                     <div className='w-full'>
                         <div className='widepc:px-[124px] pc:px-[124px] mobile:px-[20px] tablet:px-[30px]'>
                             <h4 className='text-[28px] mobile:text-[22px] my-[30px] font-bold'>
-                                발신번호 관리
+                                템플릿 관리
                             </h4>
                             
                             <ul className='flex'>
                                 <li className='text-[18px] mobile:text-[16px] mr-[72px] mobile:mr-[20px]'>
-                                    <label htmlFor='sub01' className={`cursor-pointer pb-[10px] transition ${isChecked === 'numbers' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
-                                        <input type="radio" id='sub01' name='submenu' value='numbers'  defaultChecked={isChecked === 'numbers'}  onChange={()=>handleChecked('numbers')} hidden/>
-                                        발신번호 관리
-                                    </label>
-                                </li>
-
-                                <li className='text-[18px] mobile:text-[16px] mr-[72px] mobile:mr-[20px]'>
-                                    <label htmlFor='sub02' className={`cursor-pointer pb-[10px] transition ${isChecked === 'addnum' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
-                                        <input type="radio" id='sub02' name='submenu' value='addnum'  defaultChecked={isChecked === 'addnum'}  onChange={()=>handleChecked('addnum')} hidden/>
-                                        발신번호 추가
+                                    <label htmlFor='sub01' className={`cursor-pointer pb-[10px] transition ${isChecked === 'template' ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
+                                        <input type="radio" id='sub01' name='submenu' value='template'  defaultChecked={isChecked === 'template'}  onChange={()=>handleChecked('template')} hidden/>
+                                        템플릿 관리
                                     </label>
                                 </li>
                                
@@ -59,8 +52,7 @@ export default function NumberPage() {
                         </div>
                         <div className='w-full'>
 
-                            {isChecked === 'numbers' ? <ManageNumber/> : ''}
-                            {isChecked === 'addnum' ? <AddNum/> : ''}
+                            {isChecked === 'template' ? <AddTemplate/> : ''}
 
                         </div>
 

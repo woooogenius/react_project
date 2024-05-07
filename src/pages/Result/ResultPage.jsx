@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import AddNumber from '../components/AddNumber'
-import Phone from '../components/Phone'
-import SendOption from '../components/SendOption'
+import AddNumber from '../../components/AddNumber'
+import Phone from '../../components/Phone'
+import SendOption from '../../components/SendOption'
 
-export default function ResultKakao() {
+export default function ResultPage() {
 
     const today = new Date().toISOString().split('T')[0];
 
@@ -17,7 +17,7 @@ export default function ResultKakao() {
    
 
   return (
-    <div className='w-full mt-[10px] pc:pl-[124px] mobile:px-[20px] tablet:px-[30px] pc:pr-[30px] widepc:pr-[120px] bg-white pb-[150px]  min-h-[calc(100vh-220px)]'>
+    <div className='w-full mt-[10px] pc:px-[124px] mobile:px-[20px] tablet:px-[30px]  widepc:pr-[120px] bg-white pb-[150px] min-h-[calc(100vh-220px)]'>
         <div className='flex flex-wrap'>
             
 
@@ -37,8 +37,8 @@ export default function ResultKakao() {
 
                     <div className='flex mobile:w-full'>
                         <select name="select_message" id="select_message" className='pc:w-[165px] tablet:w-[130px] mobile:w-[calc(40%-5px)] h-[55px] border border-[#CECECE] rounded-[8px] mr-[15px] px-[10px]'>
-                            <option value="전체메시지">전체 카카오톡</option>
-                            <option value="메시지">카카오</option>
+                            <option value="전체메시지">전체메시지</option>
+                            <option value="메시지">메시지</option>
                         </select>
 
                         
