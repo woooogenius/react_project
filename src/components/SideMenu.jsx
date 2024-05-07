@@ -18,7 +18,7 @@ export default function SideMenu() {
 
   return (
     <>
-        <div className='w-[240px] h-[calc(100vh-80px)] px-[24px] py-[65px] bg-[#162850] text-white rounded-tr-[30px]'>
+        <div className='w-[240px] h-[calc(100vh-80px)] px-[24px] py-[65px] bg-[#162850] text-white rounded-tr-[30px] sticky top-[80px]'>
 
             <div className='border-b border-gray-600 pb-[50px]'>
                 <h4 className='mb-[30px] text-[20px]'>userId</h4>

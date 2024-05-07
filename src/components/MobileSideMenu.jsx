@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function MobileSideMenu() {
 
@@ -15,7 +15,7 @@ export default function MobileSideMenu() {
 
   return (
     <>
-    <div className='w-[80px] h-[calc(100vh-80px)] px-[20px] py-[50px] bg-[#162850] text-white rounded-tr-[30px]'>
+    <div className='w-[80px] h-[calc(100vh-80px)] px-[20px] py-[50px] bg-[#162850] text-white sticky top-[80px]'>
 
         
 

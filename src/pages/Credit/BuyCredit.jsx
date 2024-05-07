@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import AddNumber from '../../components/AddNumber'
-import Phone from '../../components/Phone'
-import SendOption from '../../components/SendOption'
 import CreditCard from '../../components/CreditCard'
-import CreditModal from '../../components/CreditModal'
 
 export default function BuyCredit() {
 
