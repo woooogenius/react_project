@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AddNumber from '../../components/AddNumber'
 import SendOption from '../../components/SendOption'
+import PageDesc from '../../components/PageDesc'
 
 export default function MessagePage() {
 
@@ -60,15 +61,16 @@ export default function MessagePage() {
     }
 
   return (
-    <div className='w-full mt-[10px] pc:pl-[124px] mobile:px-[20px] tablet:px-[30px] pc:pr-[30px] widepc:pr-0 bg-white pb-[150px]'>
-        <div className='flex flex-wrap'>
-            
+    <div className='w-full mt-[10px] pc:px-[100px] mobile:px-[20px] tablet:px-[30px] widepc:pl-[124px] bg-white pb-[150px]'>
+        
+        <PageDesc desc01={'- 간편하게 한 화면에서 단문, 장문 포토메세지를 발송할 수 있습니다.'} desc02={'- 90byte 초과 시 장문 문자로 자동 전환되며, 최대 2000byte까지 작성 가능합니다.'}/>
 
-            <div className='w-1/2 mobile:w-full tablet:w-full pc:w-1/2'>
-                <div className='text-[16px] text-[#525252] mt-[40px] mobile:text-[14px]'>
-                    <p>- 간편하게 한 화면에서 단문, 장문 포토메세지를 발송할 수 있습니다.</p>
-                    <p>- 90byte 초과 시 장문 문자로 자동 전환되며, 최대 2000byte까지 작성 가능합니다.</p>
-                </div>
+        <div className='widepc:flex pc:flex-none'>
+
+       
+        <div className='flex flex-wrap'>
+
+            <div className='widepc:w-[600px] mobile:w-full tablet:w-full pc:w-1/2'>
 
                 <AddNumber/>
 
@@ -205,9 +207,9 @@ export default function MessagePage() {
 
             </div>
 
-            <div className='w-1/2 relative mobile:hidden tablet:hidden pc:block'>
+            <div className='widepc:w-[calc(50%-600px)] pc:w-1/2 relative mobile:hidden tablet:hidden pc:block'>
 
-                <div className='widepc:w-[400px] pc:w-[350px] widepc:h-[775px] pc:h-[700px] border-[5px] border-[#4D4D4D] px-[20px] py-[40px] bg-[#B5D3F2] rounded-[22px]  sticky top-[100px] mt-[100px] ml-[100px] overflow-y-scroll'>
+                <div className='widepc:w-[400px] pc:w-[350px] widepc:h-[775px] pc:h-[700px] border-[5px] border-[#4D4D4D] px-[20px] py-[40px] bg-[#B5D3F2] rounded-[22px] sticky top-[100px] mt-[100px] pc:ml-[80px] widepc:ml-[116px] overflow-y-scroll'>
 
                     <div className='flex text-center'>
                         <div className='w-[15%] text-[20px]'>
@@ -248,16 +250,21 @@ export default function MessagePage() {
                     </div>
 
                 </div>
+
                 {/* <Phone isWrite={isWrite} /> */}
 
 
             </div>
+
+
 
             <div className='w-full mt-[40px]'>
                 <button className='bg-button_color w-full h-[61px] rounded-[8px] text-[18px] text-white'>발송하기</button>
             </div>
 
 
+        </div>
+        <div className='widepc:w-[360px] widepc:block tablet:hidden mobile:hidden pc:hidden'></div>
         </div>
         
     </div>
