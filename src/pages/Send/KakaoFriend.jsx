@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import AddNumber from '../../components/AddNumber'
 import SendOption from '../../components/SendOption'
 import PageDesc from '../../components/PageDesc'
+import Phone from '../../components/Phone'
+import CustomToggleButton from '../../components/CustomToggleButton'
 
 export default function KakaoFriend() {
 
@@ -112,9 +114,10 @@ export default function KakaoFriend() {
 
                           <div className='mt-[25px] flex justify-between'>
                               <h4 className='text-[18px] mobile:text-[16px] font-semibold'>광고성 문자(080 수신거부 포함)</h4>
-                              <div className={`w-[52px] h-[33px] rounded-full focus:outline-none ${isClick ? 'bg-[#08C600]' : 'bg-gray-300'}`} onClick={handleClick}>
+                              {/* <div className={`w-[52px] h-[33px] rounded-full focus:outline-none ${isClick ? 'bg-[#08C600]' : 'bg-gray-300'}`} onClick={handleClick}>
                                   <span className={`inline-block overflow-hidden w-[33px] h-[33px]  bg-white rounded-full shadow-md transform transition ${isClick ? 'translate-x-5' : '-translate-x-2'}`}></span>
-                              </div>
+                              </div> */}
+                              <CustomToggleButton/>
                           </div>
 
 
@@ -131,7 +134,7 @@ export default function KakaoFriend() {
             </div>
 
             <div className='widepc:w-[calc(50%-600px)] pc:w-1/2 relative mobile:hidden tablet:hidden pc:block'>
-              <div className='widepc:w-[400px] pc:w-[350px] widepc:h-[775px] pc:h-[700px] border-[5px] border-[#4D4D4D] px-[20px] py-[40px] bg-[#B5D3F2] rounded-[22px] sticky top-[100px] mt-[100px] pc:ml-[80px] widepc:ml-[116px] overflow-y-scroll' > 
+              {/* <div className='widepc:w-[400px] pc:w-[350px] widepc:h-[775px] pc:h-[700px] border-[5px] border-[#4D4D4D] px-[20px] py-[40px] bg-[#B5D3F2] rounded-[22px] sticky top-[100px] mt-[100px] pc:ml-[80px] widepc:ml-[116px] overflow-y-scroll' > 
                 <div className='flex text-center'>
                     <div className='w-[15%] text-[20px]'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -151,7 +154,8 @@ export default function KakaoFriend() {
                   </div>
                 </div>
 
-              </div>
+              </div> */}
+              <Phone title={'카카오 채널명'} isWrite={''} images={''} kakaoFriend={true} />
             </div>
             
             <div className='w-full h-[1px] border-t border-[#CECECE] mt-[40px]'></div>

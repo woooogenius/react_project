@@ -70,7 +70,7 @@ export default function HomePage() {
 
               <div className='mt-[96px] flex justify-center mobile:flex-wrap tablet:flex-wrap pc:flex-nowrap'>
 
-                <motion.div initial={{ scale: 0 }} whileInView={{scale: 1, rotateZ: 360,transition: {when: "beforeChildren", staggerChildren: 0.5, duration:0.7} }} className='w-[444px] h-[349px] mobile:w-full tablet:w-full  bg-box-light-violet rounded-[20px] tablet:mr-0 mobile:mb-[20px] tablet:mb-[20px] pc:mr-[44px] flex flex-col justify-center items-center'>
+                <motion.div initial={{ scale: 0}} whileInView={{scale: 1, transition: {when: "beforeChildren", staggerChildren: 0.5, duration:0.7} }} className='w-[444px] h-[349px] mobile:w-full tablet:w-full  bg-box-light-violet rounded-[20px] tablet:mr-0 mobile:mb-[20px] tablet:mb-[20px] pc:mr-[44px] flex flex-col justify-center items-center'>
 
                   <div className='w-[64px] h-[64px]'>
                     <img src={process.env.PUBLIC_URL+'assets/img/write.png'} alt="img" />
@@ -81,7 +81,7 @@ export default function HomePage() {
 
                 </motion.div>
 
-                <motion.div initial={{ scale: 0 }} whileInView={{scale: 1, rotateZ: 360,transition: {when: "beforeChildren", staggerChildren: 0.5,duration:0.7} }} className='w-[444px] h-[349px] mobile:w-full tablet:w-full  bg-box-light-violet rounded-[20px] tablet:mr-0 mobile:mb-[20px] tablet:mb-[20px] pc:mr-[44px] flex flex-col justify-center items-center'>
+                <motion.div initial={{ scale: 0 }} whileInView={{scale: 1 ,transition: {when: "beforeChildren", staggerChildren: 0.5,duration:0.7} }} className='w-[444px] h-[349px] mobile:w-full tablet:w-full  bg-box-light-violet rounded-[20px] tablet:mr-0 mobile:mb-[20px] tablet:mb-[20px] pc:mr-[44px] flex flex-col justify-center items-center'>
 
                   <div className='w-[64px] h-[64px]'>
                     <img src={process.env.PUBLIC_URL+'assets/img/mail.png'} alt="img" />
@@ -92,7 +92,7 @@ export default function HomePage() {
 
                 </motion.div>
 
-                <motion.div initial={{ scale: 0 }} whileInView={{scale: 1, rotateZ: 360,transition: {when: "beforeChildren", staggerChildren: 0.5,duration:0.7} }} className='w-[444px] h-[349px] mobile:w-full tablet:w-full  bg-box-light-violet rounded-[20px]  flex flex-col justify-center items-center'>
+                <motion.div initial={{ scale: 0 }} whileInView={{scale: 1 ,transition: {when: "beforeChildren", staggerChildren: 0.5,duration:0.7} }} className='w-[444px] h-[349px] mobile:w-full tablet:w-full  bg-box-light-violet rounded-[20px]  flex flex-col justify-center items-center'>
 
                   <div className='w-[64px] h-[64px]'>
                     <img src={process.env.PUBLIC_URL+'assets/img/notice.png'} alt="img" />

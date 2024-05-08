@@ -4,6 +4,7 @@ import SendOption from '../../components/SendOption'
 import PageDesc from '../../components/PageDesc'
 import ToggleButton from 'react-toggle-button'
 import CustomToggleButton from '../../components/CustomToggleButton'
+import Phone from '../../components/Phone'
 
 export default function MessagePage() {
 
@@ -213,50 +214,9 @@ export default function MessagePage() {
 
                 <div className='widepc:w-[calc(50%-600px)] pc:w-1/2 relative mobile:hidden tablet:hidden pc:block'>
 
-                    <div className='widepc:w-[400px] pc:w-[350px] widepc:h-[775px] pc:h-[700px] border-[5px] border-[#4D4D4D] px-[20px] py-[40px] bg-[#B5D3F2] rounded-[22px] sticky top-[100px] mt-[100px] pc:ml-[80px] widepc:ml-[116px] overflow-y-scroll'>
+                    
 
-                        <div className='flex text-center'>
-                            <div className='w-[15%] text-[20px]'>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-                                </svg>
-                            </div>
-
-                            <div className='w-[70%] text-[20px]'>단문 SMS</div>
-
-                            <div className='w-[15%]'></div>
-                        </div>
-                        
-                        <div className='mt-[50px]'>
-                            <p className='text-[18px]'>userId</p>
-                            <div className='bg-white p-[20px] rounded-[16px] mt-[16px] '>
-
-                                <div className='overflow-auto break-words '>
-                                    {
-                                        isWrite.length === 0 ? '이 영역은 미리보기 화면입니다.' : isWrite
-                                    }
-                        
-                                    
-                                </div>
-                            
-                            </div>
-                            <div className=''>
-                                    {
-                                        previewImg.length === 0 ? null : 
-                                        previewImg.map((img, index) => (
-                                            <div className='w-full h-full  bg-white border border-[#CECECE] rounded-[16px] mt-[10px]'key={index}>
-                                                <img key={index} src={img} alt='img' className='w-full h-full object-cover rounded-[16px]'/>
-                                            </div>
-                                            
-                                        ))
-                                    }
-                                </div>
-
-                        </div>
-
-                    </div>
-
-                    {/* <Phone isWrite={isWrite} /> */}
+                    <Phone isWrite={isWrite} title={'단문 SMS'} images={previewImg} sendMessage={true}/>
 
 
                 </div>

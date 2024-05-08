@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PageDesc from '../../components/PageDesc';
 
 export default function ListCredit() {
 
@@ -19,10 +20,8 @@ export default function ListCredit() {
             
 
             <div className='w-full'>
-                <div className='text-[16px] text-[#525252] mt-[40px] mobile:text-[14px]'>
-                    <p>- 크레딧 구입 내역 및 결제상태, 사용내역 등을 확인하실 수 있습니다.</p>
-                    <p>- 크레딧 내역은 최대 1년까지만 보관됩니다.</p>
-                </div>
+            
+                <PageDesc desc01={'- 크레딧 구입 내역 및 결제상태, 사용내역 등을 확인하실 수 있습니다.'} desc02={'- 크레딧 내역은 최대 1년까지만 보관됩니다.'}/>
 
 
                 <div className='flex justify-between mobile:justify-normal mobile:flex-wrap mt-[56px]'>

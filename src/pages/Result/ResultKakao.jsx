@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PageDesc from '../../components/PageDesc';
 
 export default function ResultKakao() {
 
@@ -17,12 +18,8 @@ export default function ResultKakao() {
     <div className='w-full mt-[10px] pc:pl-[124px] mobile:px-[20px] tablet:px-[30px] pc:pr-[30px] widepc:pr-[120px] bg-white pb-[150px]  min-h-[calc(100vh-220px)]'>
         <div className='flex flex-wrap'>
             
-
             <div className='w-full'>
-                <div className='text-[16px] text-[#525252] mt-[40px] mobile:text-[14px]'>
-                    <p>- 최근 90일동안 전송된 메시지를 확인할 수 있습니다.</p>
-                    <p>- 전송결과 완료 후 메시지 전송 실패 건은 사용한 충전금/포인트가 재충전 됩니다.</p>
-                </div>
+                <PageDesc desc01={'- 최근 90일동안 전송된 메시지를 확인할 수 있습니다.'} desc02={'- 전송결과 완료 후 메시지 전송 실패 건은 사용한 충전금/포인트가 재충전 됩니다.'}/>
 
 
                 <div className='flex justify-between mobile:justify-normal mobile:flex-wrap mt-[56px]'>

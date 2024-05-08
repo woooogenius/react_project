@@ -52,7 +52,7 @@ export default function KakaoAlert() {
             </div>
 
             <div className='widepc:w-[calc(50%-600px)] pc:w-1/2 relative mobile:hidden tablet:hidden pc:block'>
-              <div className='widepc:w-[400px] pc:w-[350px] widepc:h-[775px] pc:h-[700px] border-[5px] border-[#4D4D4D] px-[20px] py-[40px] bg-[#B5D3F2] rounded-[22px] sticky top-[100px] mt-[100px] pc:ml-[80px] widepc:ml-[116px] overflow-y-scroll' > 
+              {/* <div className='widepc:w-[400px] pc:w-[350px] widepc:h-[775px] pc:h-[700px] border-[5px] border-[#4D4D4D] px-[20px] py-[40px] bg-[#B5D3F2] rounded-[22px] sticky top-[100px] mt-[100px] pc:ml-[80px] widepc:ml-[116px] overflow-y-scroll' > 
                 <div className='flex text-center'>
                     <div className='w-[15%] text-[20px]'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -74,7 +74,8 @@ export default function KakaoAlert() {
                   </div>
                 </div>
 
-              </div>
+              </div> */}
+              <Phone title={'카카오 채널명'} isWrite={''} images={''} kakaoChannel={true} />
             </div>
             
             <div className='w-full h-[1px] border-t border-[#CECECE] mt-[40px]'></div>

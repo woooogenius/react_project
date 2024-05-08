@@ -11,7 +11,7 @@ export default function CreditCard({amount}) {
 
   return (
     <>
-        <div className='widepc:w-[275px] mobile:w-full pc:w-[calc(50%-60px)] tablet:w-[calc(50%-15px)] widepc:mr-0  widepc:mt-0 h-[370px] border border-[#E5E5E5] rounded-[8px] p-[20px] shadow-lg '>
+        <div className='widepc:w-[273px] mobile:w-full pc:w-[calc(33.3333%-60px)] tablet:w-[calc(50%-15px)] widepc:mr-18px  widepc:mt-0 h-[367px] border border-[#E5E5E5] rounded-[8px] p-[20px] shadow-lg '>
             <p className='text-[24px] font-bold'>{amount}원</p>
             <p className='text-[15px] text-[#7B7B7B] mt-[10px]'>총 66,666건 발송 가능<br/>1건당 15원에 결제가능합니다</p>
 

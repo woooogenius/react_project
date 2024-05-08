@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import TemplateModal from '../../components/TemplateModal'
 import ModalDelete from '../../components/ModalDelete'
+import PageDesc from '../../components/PageDesc'
 
 export default function AddTemplate() {
 
@@ -23,10 +24,8 @@ export default function AddTemplate() {
                 
 
                 <div className='w-full'>
-                    <div className='text-[16px] text-[#525252] mt-[40px] mobile:text-[14px]'>
-                        <p>- 최대 100개 템플릿까지 저장 가능합니다.</p>
-                        <p>- 템플릿은 최대 1년까지만 보관됩니다.</p>
-                    </div>
+                    
+                    <PageDesc desc01={'- 최대 100개 템플릿까지 저장 가능합니다.'} desc02={'- 템플릿은 최대 1년까지만 보관됩니다.'}/>
 
 
                     <div className='flex justify-between mobile:justify-normal mobile:flex-wrap mt-[56px]'>
