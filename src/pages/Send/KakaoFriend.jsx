@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import AddNumber from '../../components/AddNumber'
+import AddNumber from './partials/AddNumber'
 import SendOption from '../../components/SendOption'
 import PageDesc from '../../components/PageDesc'
-import Phone from '../../components/Phone'
+import Phone from './partials/Phone'
 import CustomToggleButton from '../../components/CustomToggleButton'
 
 export default function KakaoFriend() {

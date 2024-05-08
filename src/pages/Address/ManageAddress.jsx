@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import ModalDelete from '../../components/ModalDelete'
-import AddAddressModal from '../../components/AddAddressModal'
-import ModalEdit from '../../components/ModalEdit'
+import React, { useState } from 'react'
+import ModalDelete from '../../components/Modal/ModalDelete'
+import AddAddressModal from '../../components/Modal/AddAddressModal'
+import ModalEdit from '../../components/Modal/ModalEdit'
 
 export default function ManageAddress() {
 

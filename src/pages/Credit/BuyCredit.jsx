@@ -1,5 +1,5 @@
 import React from 'react'
-import CreditCard from '../../components/CreditCard'
+import CreditCard from './partials/CreditCard'
 import PageDesc from '../../components/PageDesc'
 
 export default function BuyCredit() {

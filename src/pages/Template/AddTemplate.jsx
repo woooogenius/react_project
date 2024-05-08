@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import TemplateModal from '../../components/TemplateModal'
-import ModalDelete from '../../components/ModalDelete'
+import TemplateModal from '../../components/Modal/TemplateModal'
+import ModalDelete from '../../components/Modal/ModalDelete'
 import PageDesc from '../../components/PageDesc'
 
 export default function AddTemplate() {

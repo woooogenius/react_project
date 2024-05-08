@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import DelAccountModal from '../../components/DelAccountModal'
+import DelAccountModal from '../../components/Modal/DelAccountModal'
+import MyPageInput from '../../components/MyPageInput'
+import SubmitBtn from '../../components/SubmitBtn'
 
 export default function UserInfoPage() {
 
@@ -66,26 +68,11 @@ export default function UserInfoPage() {
 
                             <div className='mt-[56px]'>
 
+                                <MyPageInput title={'이메일'} onChangeWrite={onChangeWrite} isWrite={isWrite} placeholder={'이메일 입력(asdf@asdf.com)'}/>
+
+                                <MyPageInput title={'비밀번호'} onChangeWrite={onChangePasswd} placeholder={'비밀번호 입력(asdfasdf)'} isWrite={isWritePasswd}/> 
                                 
-
-                                <h4 className='text-[20px] mt-[50px]'>이메일</h4>
-                                <div className=' mt-[10px]'>
-                                    <input type="text" onChange={onChangeWrite} placeholder='이메일 입력(asdf@asdf.com)' className={`${isWrite.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                </div>
-                                
-
-                                    
-                                <div>
-                                    <h4 className='text-[20px] mt-[50px]'>비밀번호</h4>
-                                    <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangePasswd} placeholder='비밀번호 입력(asdfasdf)' className={`${isWritePasswd.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                    </div> 
-                                </div>
-
-                                
-
-                                <button onClick={onClickSubmit} className='w-full bg-[#4F44F0] text-white h-[55px] rounded-[8px] mt-[80px]'>확인</button>
-
+                                <SubmitBtn onClickSubmit={onClickSubmit} btnTitle={'확인'}/>
                             </div>
                         </div> 
                         : 
@@ -108,19 +95,10 @@ export default function UserInfoPage() {
 
                                 </label>
 
-                                <h4 className='text-[16px] mt-[20px]'>이메일</h4>
-                                <div className=' mt-[10px]'>
-                                    <input type="text" onChange={onChangeWrite} value={isWrite} placeholder='이메일' className={`${isWrite.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                </div>
+                               
+                                <MyPageInput title={'이메일'} onChangeWrite={onChangeWrite} value={isWrite} placeholder={'이메일'} isWrite={isWrite}/>
                                 
-
-                                    
-                                <div>
-                                    <h4 className='text-[16px] mt-[30px]'>이름</h4>
-                                    <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangeName} placeholder='이름' value={name} className={`${name.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                    </div> 
-                                </div>
+                                <MyPageInput title={'이름'} onChangeWrite={onChangeName} placeholder={'이름'} value={name} isWrite={name}/>
 
                                 <div>
                                     <h4 className='text-[16px] mt-[30px]'>휴대폰 번호</h4>

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import AddNumber from '../../components/AddNumber'
+import AddNumber from './partials/AddNumber'
 import SendOption from '../../components/SendOption'
 import PageDesc from '../../components/PageDesc'
-import ToggleButton from 'react-toggle-button'
 import CustomToggleButton from '../../components/CustomToggleButton'
-import Phone from '../../components/Phone'
+import Phone from './partials/Phone'
 
 export default function MessagePage() {
 

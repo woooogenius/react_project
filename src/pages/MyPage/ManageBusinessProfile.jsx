@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import DelAccountModal from '../../components/DelAccountModal'
+import DelAccountModal from '../../components/Modal/DelAccountModal'
+import MyPageInput from '../../components/MyPageInput'
 
 export default function ManageBusinessProfile() {
 
@@ -9,10 +10,6 @@ export default function ManageBusinessProfile() {
         setIsWrite(e.target.value)
     }
 
-    const [isWritePasswd, setIsWritePasswd] = useState('')
-    const onChangePasswd = (e)=>{
-        setIsWritePasswd(e.target.value)
-    }
 
     const [name, setName] = useState('')
     const onChangeName = (e)=>{
@@ -108,104 +105,30 @@ export default function ManageBusinessProfile() {
 
                                 </label>
 
-                                <h4 className='text-[16px] mt-[20px]'>기업유형</h4>
-                                <div className=' mt-[10px]'>
-                                    <input type="text" onChange={onChangeWrite} value={isWrite} placeholder='기업유형' className={`${isWrite.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                </div>
+                                <MyPageInput title={'사업자 유형'} onChangeWrite={onChangeWrite} value={isWrite} placeholder={'사업자유형'} isWrite={isWrite}/>
                                 
+                                <MyPageInput title={'기업명'} onChangeWrite={onChangeName} placeholder={'기업명'} value={name} isWrite={name}/>
 
-                                
+                                <MyPageInput title={'사업자 등록번호'} onChangeWrite={onChangeBizNum} placeholder={'사업자 등록번호'} value={bizNum} isWrite={bizNum}/>
 
-                                <div>
-                                    <h4 className='text-[16px] mt-[30px]'>광고계정 이름</h4>
-                                    <div className=' mt-[10px] flex'>
-                                        <input type="text"  placeholder='광고계정 이름' className={`w-[calc(80%-16px)] h-[55px]  border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                        <button  className='w-[calc(20%)] ml-[16px] rounded-[8px] border border-[#5146F0] text-[#5146F0]'>변경하기</button>
-                                    </div> 
-                                </div>
+                                <MyPageInput title={'사업자 유형'} onChangeWrite={onChangeKind} placeholder={'사업자 유형'} value={bizKind} isWrite={bizKind}/>
                                     
-                                <div>
-                                    <h4 className='text-[16px] mt-[30px]'>사업자명</h4>
-                                    <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangeName} placeholder='사업자명' value={name} className={`${name.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                    </div> 
-                                </div>
+                                <MyPageInput title={'업종'} onChangeWrite={onChangeType} placeholder={'업종'} value={type} isWrite={type}/>
 
-                                    
-                                <div>
-                                    <h4 className='text-[16px] mt-[30px]'>사업자 등록번호</h4>
-                                    <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangeBizNum} placeholder='사업자 등록번호' value={bizNum} className={`${bizNum.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                    </div> 
-                                </div>
+                                <MyPageInput title={'사업장 소재지'} onChangeWrite={onChangeLocation} placeholder={'사업장 소재지'} value={location} isWrite={location}/>
 
-                                    
-                                <div>
-                                    <h4 className='text-[16px] mt-[30px]'>사업자 유형</h4>
-                                    <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangeKind} placeholder='사업자 유형' value={bizKind} className={`${bizKind.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                    </div> 
-                                </div>
+                                <MyPageInput title={'대표번호'} onChangeWrite={onChangeRepresentativeNum} placeholder={'대표번호'} value={representativeNum} isWrite={representativeNum}/>
 
-                                    
-                                <div>
-                                    <h4 className='text-[16px] mt-[30px]'>업종</h4>
-                                    <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangeType} placeholder='업종' value={type} className={`${type.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                    </div> 
-                                </div>
+                                <MyPageInput title={'대표자 연락처'} onChangeWrite={onChangeRepresentativePerson} placeholder={'대표자 연락처'} value={representativePerson} isWrite={representativePerson}/>
 
+                                <MyPageInput title={'정산 및 계산서 발행 담당자명'} onChangeWrite={onChangeCaculatePerson} placeholder={'담당자명'} value={calculatePerson} isWrite={calculatePerson} />
 
-                                    
-                                <div>
-                                    <h4 className='text-[16px] mt-[30px]'>사업장 소재지</h4>
-                                    <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangeLocation} placeholder='사업장 소재지' value={location} className={`${location.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                    </div> 
-                                </div>
+                                <MyPageInput title={'담당자 연락처'} onChangeWrite={onChangeCalculateNum} placeholder={'담당자 연락처'} value={calculateNum} isWrite={calculateNum}/>
 
-                                    
-                                <div>
-                                    <h4 className='text-[16px] mt-[30px]'>대표번호</h4>
-                                    <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangeRepresentativeNum} placeholder='대표번호' value={representativeNum} className={`${representativeNum.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                    </div> 
-                                </div>
-
-                                    
-                                <div>
-                                    <h4 className='text-[16px] mt-[30px]'>대표자 연락처</h4>
-                                    <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangeRepresentativePerson} placeholder='대표자 연락처' value={representativePerson} className={`${representativePerson.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                    </div> 
-                                </div>
-
-                                    
-                                <div>
-                                    <h4 className='text-[16px] mt-[30px]'>정산 및 계산서 발행 담당자명</h4>
-                                    <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangeCaculatePerson} placeholder='담담자명' value={calculatePerson} className={`${calculatePerson.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                    </div> 
-                                </div>
-
-                                <div>
-                                    <h4 className='text-[16px] mt-[30px]'>담당자 연락처</h4>
-                                    <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangeCalculateNum} placeholder='담당자 연락처' value={calculateNum} className={`${calculateNum.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                    </div> 
-                                </div>
-
-                                <div>
-                                    <h4 className='text-[16px] mt-[30px]'>계산서 발행 이메일 주소</h4>
-                                    <div className=' mt-[10px] flex'>
-                                        <input type="text" onChange={onChangeCalcEmail} value={calcEmail} placeholder='이메일 주소' className={`${calcEmail.length > 0 ? 'bg-[#F2F5F9]' : ''} w-[calc(80%-16px)] h-[55px]  border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                        <button  className='w-[calc(20%)] ml-[16px] rounded-[8px] border border-[#5146F0] text-[#5146F0]'>변경하기</button>
-                                    </div> 
-                                </div>
-
+                                <MyPageInput title={'계산서 발행 이메일 주소'} onChangeWrite={onChangeCalcEmail} placeholder={'이메일 주소'} value={calcEmail} isWrite={calcEmail}/>
 
                                 
-                                <p onClick={onClickDeleteAccount} className='underline text-[#484848] mt-[72px] cursor-pointer text-[18px]'>계정탈퇴</p>
+                                <p onClick={onClickDeleteAccount} className='underline text-[#484848] mt-[121px] cursor-pointer text-[18px]'>프로필 삭제</p>
                                
 
                             </div>

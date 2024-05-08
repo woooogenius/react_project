@@ -1,6 +1,6 @@
 import React from 'react'
-import AddNumber from '../../components/AddNumber'
-import Phone from '../../components/Phone'
+import AddNumber from './partials/AddNumber'
+import Phone from './partials/Phone'
 import SendOption from '../../components/SendOption'
 import PageDesc from '../../components/PageDesc'
 

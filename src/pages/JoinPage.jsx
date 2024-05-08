@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import JoinHeader from '../components/JoinHeader'
-import BasicModal from '../components/BasicModal'
+import BasicModal from '../components/Modal/BasicModal'
+import MyPageInput from '../components/MyPageInput'
+import SubmitBtn from '../components/SubmitBtn'
 
 export default function JoinPage() {
 
@@ -64,12 +66,8 @@ export default function JoinPage() {
 
 
                                     
-            <div>
-                <h4 className='text-[16px] mt-[30px]'>이름</h4>
-                <div className=' mt-[10px]'>
-                    <input type="text"  placeholder='이름'  className={` w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                </div> 
-            </div>
+           
+            <MyPageInput title={'이름'} placeholder={'이름'} isWrite={''}/>
 
             <div>
                 <h4 className='text-[16px] mt-[30px]'>본인인증</h4>
@@ -79,20 +77,12 @@ export default function JoinPage() {
                 </div> 
             </div>
 
-            <h4 className='text-[16px] mt-[20px]'>이메일</h4>
-            <div className=' mt-[10px]'>
-                <input type="text"  placeholder='이메일' className={` w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-            </div>
+            <MyPageInput title={'이메일'} placeholder={'이메일'} isWrite={''}/>
+            <MyPageInput title={'비밀번호'} placeholder={'비밀번호'} isWrite={''}/>
+            <MyPageInput title={'비밀번호 확인'} placeholder={'비밀번호 확인'} isWrite={''}/>
 
-            <h4 className='text-[16px] mt-[20px]'>비밀번호</h4>
-            <div className=' mt-[10px]'>
-                <input type="text"  placeholder='8~20자의 영문, 숫자, 특수문자 조합' className={` w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-            </div>
+           
 
-            <h4 className='text-[16px] mt-[20px]'>비밀번호 확인</h4>
-            <div className=' mt-[10px]'>
-                <input type="text"  placeholder='8~20자의 영문, 숫자, 특수문자 조합' className={` w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-            </div>
                                 
            <div>
                 <p className='h-[56px] text-[14px] flex items-center justify-center mt-[64px] px-[20px] py-[10px] bg-[#EFF4FF] rounded-[8px]'>
@@ -127,7 +117,9 @@ export default function JoinPage() {
 
             <div className='border-b border-[#CECECE] w-full mt-[30px]'></div>
 
-            <button onClick={onClickJoin} className='w-full rounded-[8px] h-[56px] text-white bg-button_color mt-[80px] mb-[100px]'>가입하기</button>
+            <div className='mb-[100px]'>
+                <SubmitBtn onClickSubmit={onClickJoin} btnTitle={'가입하기'}/>
+            </div>
 
 
         </div>

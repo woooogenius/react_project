@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import DelAccountModal from '../../components/DelAccountModal'
+import MyPageInput from '../../components/MyPageInput'
+import SubmitBtn from '../../components/SubmitBtn'
 
 export default function ChangePasswd() {
 
@@ -46,32 +47,13 @@ export default function ChangePasswd() {
 
                             <div className='mt-[56px]'>
 
-                                
+                                <MyPageInput title={'현재 비밀번호'} onChangeWrite={onChangePasswd} placeholder={'현재 비밀번호'} isWrite={nowPasswd}/>
+                                   
+                                <MyPageInput title={'새 비밀번호'} onChangeWrite={onChangeNewPasswd} placeholder={'8자 이상, 영문 혹은 영문과 숫자 조합'} isWrite={newPasswd}/>
 
-                                <h4 className='text-[18px] mt-[50px]'>현재 비밀번호</h4>
-                                <div className=' mt-[10px]'>
-                                    <input type="text" onChange={onChangePasswd} placeholder='현재 비밀번호' className={`${nowPasswd.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                </div>
-                                
+                                <MyPageInput title={'새 비밀번호 확인'} onChangeWrite={onChangeConfirmPasswd} placeholder={'8자 이상, 양믄 혹은 영문과 숫자 조합'} isWrite={confirmPasswd}/> 
 
-                                    
-                                <div>
-                                    <h4 className='text-[18px] mt-[50px]'>새 비밀번호</h4>
-                                    <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangeNewPasswd} placeholder='8자 이상, 영문 혹은 영문과 숫자 조합' className={`${newPasswd.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                    </div> 
-                                </div>
-
-                                <div>
-                                    <h4 className='text-[18px] mt-[50px]'>새 비밀번호 확인</h4>
-                                    <div className=' mt-[10px]'>
-                                        <input type="text" onChange={onChangeConfirmPasswd} placeholder='8자 이상, 영문 혹은 영문과 숫자 조합' className={`${confirmPasswd.length > 0 ? 'bg-[#F2F5F9]' : ''} w-full h-[55px] mr-[10px] border border-[#CECECE] rounded-[8px] px-[15px]`}/>
-                                    </div> 
-                                </div>
-
-                                
-
-                                <button  className='w-full bg-[#4F44F0] text-white h-[55px] rounded-[8px] mt-[80px]'>확인</button>
+                                <SubmitBtn btnTitle={'확인'}/>
 
                             </div>
                         </div> 

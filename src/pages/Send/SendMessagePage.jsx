@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import DashHeader from '../../components/DashHeader'
-import SideMenu from '../../components/SideMenu'
 import MessagePage from '../Send/MessagePage'
 import KakaoAlert from '../Send/KakaoAlert'
 import KakaoFriend from '../Send/KakaoFriend'
-import MobileSideMenu from '../../components/MobileSideMenu'
 import Page from '../../components/Page'
 
 export default function SendMessagePage() {

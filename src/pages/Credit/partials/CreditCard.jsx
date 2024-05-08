@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import CreditModal from './CreditModal'
+import CreditModal from '../../../components/Modal/CreditModal'
 
 export default function CreditCard({amount}) {
 
