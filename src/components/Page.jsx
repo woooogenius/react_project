@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MobileSideMenu from './MobileSideMenu';
 import DashHeader from './DashHeader';
 import SideMenu from './SideMenu';
+import { Link } from 'react-router-dom';
 
 export default function Page({ title, components }) {
     const [isChecked, setIsChecked] = useState(components[0].name);
@@ -34,10 +35,17 @@ export default function Page({ title, components }) {
                                 <ul className='flex'>
                                     {components.map((component) => (
                                         <li key={component.name} className='text-[18px] mobile:text-[16px] mr-[72px] mobile:mr-[20px]'>
-                                            <label className={`cursor-pointer pb-[10px] transition ${isChecked === component.name ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
-                                                <input type='radio' name='submenu' value={component.name} defaultChecked={isChecked === component.name} onChange={() => handleChecked(component.name)} hidden />
-                                                {component.label}
-                                            </label>
+                                            {component.name === 'business' ? (
+                                                <Link to='/business' className={`cursor-pointer pb-[10px] transition ${isChecked === component.name ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
+                                                    {component.label}
+                                                </Link>
+                                            ) : 
+                                            (
+                                                <label className={`cursor-pointer pb-[10px] transition ${isChecked === component.name ? 'text-[#5146F0] border-b-2 border-[#5146F0]' : 'text-[#525252] border-0'}`}>
+                                                    <input type='radio' name='submenu' value={component.name} defaultChecked={isChecked === component.name} onChange={() => handleChecked(component.name)} hidden />
+                                                    {component.label}
+                                                </label>
+                                            )}
                                         </li>
                                     ))}
                                 </ul>
