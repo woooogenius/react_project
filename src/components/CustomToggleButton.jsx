@@ -1,33 +1,15 @@
-import React from 'react'
-import ToggleButton from 'react-toggle-button'
+import React, { useState } from 'react'
 
 export default function CustomToggleButton() {
-  return (
-    <ToggleButton
-  inactiveLabel={''}
-  activeLabel={''}
-  colors={{
-    activeThumb: {
-      base: 'rgb(250,250,250)',
-    },
-    inactiveThumb: {
-      base: 'rgb(62,130,247)',
-    },
-    active: {
-      base: 'rgb(207,221,245)',
-      hover: 'rgb(177, 191, 215)',
-    },
-    inactive: {
-      base: 'rgb(65,66,68)',
-      hover: 'rgb(95,96,98)',
-    },
-  }}
-  trackStyle={{height: 32}}
-  thumbStyle={{height: 26, width: 26, right:0}}
 
-  value={true}
-  onToggle={(value) => {
-    
-  }} />
+  const [isClick, setIsClick] = useState(false)
+  const handleClick = ()=>{
+    setIsClick(!isClick)
+  }
+
+  return (
+    <div className={`w-[58px] h-[35px] rounded-full focus:outline-none ${isClick ? 'bg-blue-500' : 'bg-gray-300'}`} onClick={handleClick}>
+      <span className={`inline-block overflow-hidden w-[30px] h-[30px] leading-[30px]  bg-white rounded-full shadow-md transform transition ${isClick ? 'translate-x-[26px] translate-y-[2px]' : 'translate-x-[3px] translate-y-[2px]'}`}></span>
+    </div>
   )
 }

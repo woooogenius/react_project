@@ -3,6 +3,7 @@ import AddNumber from '../../components/AddNumber'
 import SendOption from '../../components/SendOption'
 import PageDesc from '../../components/PageDesc'
 import ToggleButton from 'react-toggle-button'
+import CustomToggleButton from '../../components/CustomToggleButton'
 
 export default function MessagePage() {
 
@@ -144,13 +145,11 @@ export default function MessagePage() {
 
                             <div className='mt-[25px] flex justify-between'>
                                 <h4 className='text-[18px] mobile:text-[16px] font-semibold'>광고성 문자(080 수신거부 포함)</h4>
-                                {/* <div className={`w-[52px] h-[34px] rounded-full focus:outline-none ${isClick ? 'bg-blue-500' : 'bg-gray-300'}`} onClick={handleClick}>
-                                    <span className={`inline-block overflow-hidden w-[30px] h-[30px] leading-[30px]  bg-white rounded-full shadow-md transform transition ${isClick ? 'translate-x-5' : '-translate-x-2'}`}></span>
-                                </div> */}
-                                <ToggleButton
+                                <CustomToggleButton/>
+                                {/* <ToggleButton
                                     value={ isClick }
                                     onToggle={(value) =>setIsClick(!value)} 
-                                />
+                                /> */}
                             </div>
 
                             <div className='w-full h-[1px] border-t border-[#CECECE] mt-[25px]'></div>
