@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import TemplateModal from '../../components/Modal/TemplateModal'
 import ModalDelete from '../../components/Modal/ModalDelete'
 import PageDesc from '../../components/PageDesc'

@@ -6,8 +6,10 @@ export default function AddNumber() {
     const [addNumber, setAddNumber] = useState([])
     const [number, setNumber] = useState('')
     const onClickAddBtn = (number)=>{
+     
         setAddNumber([...addNumber, number])
         setNumber('')
+        
     }
     const onDeleteBtnClick = (idx)=>{
         const delNumber = addNumber.filter((_,i)=>i!==idx)

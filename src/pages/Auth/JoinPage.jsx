@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import JoinHeader from '../components/JoinHeader'
-import BasicModal from '../components/Modal/BasicModal'
-import MyPageInput from '../components/MyPageInput'
-import SubmitBtn from '../components/SubmitBtn'
+import JoinHeader from '../../components/JoinHeader'
+import BasicModal from '../../components/Modal/BasicModal'
+import MyPageInput from '../../components/MyPageInput'
+import SubmitBtn from '../../components/SubmitBtn'
 
 export default function JoinPage() {
 
