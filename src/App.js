@@ -1,6 +1,5 @@
 import './App.css';
 import Footer from './components/Footer';
-import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import{Routes, Route, useLocation} from 'react-router-dom'; 
 import SendMessagePage from './pages/Send/SendMessagePage';
@@ -14,11 +13,15 @@ import BusinessProfilePage from './pages/MyPage/BusinessProfilePage';
 import JoinPage from './pages/Auth/JoinPage';
 import LogInPage from './pages/Auth/LogInPage';
 import FindEmail from './pages/Auth/FindEmail';
+import FindPasswd from './pages/Auth/FindPasswd';
+import PasswdReset from './pages/Auth/PasswdReset';
 
 
 function App() {
   const location = useLocation()
-  const footerHide = location.pathname==='/login' || location.pathname==='/findEmail'
+  const footerHidePaths = ['/login', '/findEmail', '/findPasswd', '/resetPasswd'];
+  const footerHide = footerHidePaths.includes(location.pathname);
+  
   return (
     <div className="App">
 
@@ -36,6 +39,8 @@ function App() {
         <Route path='/join' element={<JoinPage/>}/>
         <Route path='/login' element={<LogInPage/>}/>
         <Route path='/findEmail' element={<FindEmail/>}/>
+        <Route path='/findPasswd' element={<FindPasswd/>}/>
+        <Route path='/resetPasswd' element={<PasswdReset/>}/>
            
       </Routes>
 

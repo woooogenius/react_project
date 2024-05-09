@@ -4,7 +4,7 @@ import SubmitBtn from '../../components/SubmitBtn'
 import MyPageInput from '../../components/MyPageInput'
 import InputWithButton from '../../components/InputWithButton'
 
-export default function FindEmail() {
+export default function FindPasswd() {
     const [isAuth, setIsAuth] = useState(false)
     const onClickAuth = ()=>{
         setIsAuth(true)
@@ -16,9 +16,10 @@ export default function FindEmail() {
         <div className='pt-[80px] tablet:w-[560px] m-auto mobile:w-[full] mobile:px-[20px] min-h-[calc(100vh)] pb-[100px]'>
 
             <div className='w-[219px] h-[68px] mt-[173px] mobile:mt-[50px] mb-[29px] m-auto text-center text-[24px] font-bold'>
-                <h4>이메일 찾기</h4>
+                <h4>비밀번호 찾기</h4>
             </div>
             
+            <MyPageInput title={'이메일'} placeholder={'이메일 입력'} isWrite={''} />
             <MyPageInput title={'이름'} placeholder={'이름 입력'} isWrite={''} />
 
 
