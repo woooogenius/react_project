@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import TemplateModal from '../../components/Modal/TemplateModal'
 import ModalDelete from '../../components/Modal/ModalDelete'
 import PageDesc from '../../components/PageDesc'
+import SelectWithSearch from '../../components/SelectWithSearch'
 
 export default function AddTemplate() {
 
@@ -34,23 +35,8 @@ export default function AddTemplate() {
                             <button onClick={onClickDel} className='w-[142px] mobile:w-[calc(50%-8px)]  h-[56px] rounded-[8px] text-[#5146F0] border border-[#5146F0]'>삭제하기</button>
                         </div>
 
-                        <div className='flex mobile:w-full mobile:order-1'>
-                            <select name="select_message" id="select_message" className='pc:w-[165px] tablet:w-[130px] mobile:w-[calc(50%-5px)] h-[55px] border border-[#CECECE] rounded-[8px] mr-[15px] px-[10px]'>
-                                <option value="전체메시지">전체메시지</option>
-                                <option value="메시지">메시지</option>
-                            </select>
-
-                            
-                            <div className=' relative tablet:w-[170px] pc:w-[210px] h-[55px] mobile:w-[calc(50%-5px)]'>
-                                <input type="text" placeholder='제목 또는 내용입력' className='w-full h-full border border-[#CECECE] rounded-[8px] px-[10px]'/>
-                                <div className='absolute top-1/2 right-[10px] transform -translate-y-1/2 cursor-pointer'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                                    </svg>
-                                </div>
-                            </div> 
-
-                        </div>
+                       
+                        <SelectWithSearch placeholder={'전체'} option01={'메시지'} inputPlaceholder={'제목 또는 내용 입력'}/>
 
                     
                     
